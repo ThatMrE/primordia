@@ -1,0 +1,11 @@
+/* ============================================================
+   PRIMORDIA — Webfonts
+   Two voices, no more:
+   1. Futura — display + reading. Loaded as JOST (geometric
+      grotesque, near-identical metrics) since Futura is not a
+      free webfont. Real Futura renders automatically wherever
+      the viewer has it licensed (it is first in the stack).
+   2. JetBrains Mono — technical readouts only.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');

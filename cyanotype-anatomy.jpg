@@ -1,0 +1,78 @@
+/* ============================================================
+   PRIMORDIA — COLOR
+   Three primaries, two grounds.
+   ≥80% of any surface is VOID or BONE. The three primaries
+   (red / green / blue) are the system — additive, equal, never
+   decorative. Specimen inks are rare registers: pulled in to
+   treat an image, never to wash a layout.
+   ============================================================ */
+
+:root {
+  /* ---------- GROUNDS (dark) ---------- */
+  --void:    #07080A;   /* primary specimen ground (~50% of a dark layout) */
+  --void-2:  #0E1014;   /* panel / raised surface */
+  --key:     #1A1A1A;   /* CMYK key black, deep ink */
+
+  /* ---------- PAPER (light) ---------- */
+  --bone:      #F2EFE6; /* primary paper (~30% of any layout) */
+  --cream:     #ECE3CC; /* riso / aged-paper register */
+  --newsprint: #E6E0CE; /* secondary paper tint */
+
+  /* ---------- THE THREE PRIMARIES (the system) ---------- */
+  --rgb-red:   #FF2D2D; /* Signal Red    — the signal: headlines, live tab, one accent per surface */
+  --rgb-green: #00E5A0; /* Bio Green     — affirmation, growth, the "do" register */
+  --rgb-blue:  #2E6BFF; /* Spectrum Blue — depth, cyanotype lineage, links */
+
+  /* ---------- SPECIMEN INKS — rare registers ----------
+     Each allowed AT MOST once per surface, to treat an image
+     or carry a single data accent. Never a wash, never body copy. */
+  --cyanotype:  #1E63C8; /* cyanotype / blueprint mid */
+  --cyano-deep: #0A2452; /* cyanotype Prussian shadow */
+  --cyano-pale: #CFE6FF; /* cyanotype highlight */
+  --alizarin:   #E12B5C; /* alizarin / cleared-stained specimen */
+  --gel:        #FF7A1A; /* ethidium gel band orange */
+  --fluoro-pink:#FF2D8B; /* fluorescence channel — pink */
+  --fluoro-teal:#00E0B4; /* fluorescence channel — teal (GFP/FITC) */
+  --hazard:     #FFD600; /* containment yellow — signage accent only */
+
+  /* ---------- CMYK PROCESS (image treatment only) ---------- */
+  --c: #00AEEF;
+  --m: #EC008C;
+  --y: #FFF200;
+  --k: #1A1A1A;
+
+  /* ---------- HAIRLINES ---------- */
+  --line:   rgba(242,239,230,0.16); /* default rule on void */
+  --line-2: rgba(242,239,230,0.30); /* stronger rule / panel border */
+  --line-ink:   rgba(14,14,14,0.18); /* rule on bone */
+  --line-ink-2: rgba(14,14,14,0.34);
+
+  /* ---------- SEMANTIC GROUND / INK ---------- */
+  --ground:        var(--void);
+  --paper:         var(--bone);
+  --ink-on-ground: var(--bone);
+  --ink-on-paper:  var(--void);
+  --signal:        var(--rgb-red);
+
+  /* ---------- LAYERED TEXT ---------- */
+  --fg1: var(--bone);                  /* primary text on void */
+  --fg2: rgba(242,239,230,0.72);       /* secondary on void */
+  --fg3: rgba(242,239,230,0.48);       /* tertiary / metadata on void */
+  --fg1-inv: var(--void);              /* primary text on bone */
+  --fg2-inv: rgba(7,8,10,0.70);        /* secondary on bone */
+  --fg3-inv: rgba(7,8,10,0.45);        /* tertiary on bone */
+
+  /* ---------- PATTERNS ----------
+     Borders and headers only — never under body copy. */
+  --halftone-red:   radial-gradient(circle, #FF2D2D 1.6px, transparent 1.7px) 0 0 / 11px 11px; /* @kind other */
+  --halftone-green: radial-gradient(circle, #00E5A0 1.6px, transparent 1.7px) 0 0 / 11px 11px; /* @kind other */
+  --halftone-blue:  radial-gradient(circle, #2E6BFF 1.6px, transparent 1.7px) 0 0 / 11px 11px; /* @kind other */
+  --halftone-bone:  radial-gradient(circle, #F2EFE6 1.6px, transparent 1.7px) 0 0 / 11px 11px; /* @kind other */
+  --lab-grid: linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 18px 18px,
+              linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 18px 18px; /* @kind other */
+  --gel-stripes: repeating-linear-gradient(
+    90deg, transparent 0 18px, rgba(255,122,26,0.85) 18px 22px, transparent 22px 64px
+  ); /* @kind other */
+}
+
+::selection { background: var(--rgb-red); color: var(--bone); }

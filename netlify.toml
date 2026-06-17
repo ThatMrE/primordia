@@ -1,0 +1,72 @@
+# Primordia Grants — Netlify configuration
+# Static site. No build step: HTML/CSS/JS are served as-is from the repo root.
+
+[build]
+  publish = "."
+  command = ""
+
+# ---- Pretty URLs: /apply instead of /apply.html ----
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/program"
+  to = "/grantees.html"
+  status = 200
+[[redirects]]
+  from = "/grantees"
+  to = "/grantees.html"
+  status = 200
+[[redirects]]
+  from = "/cohort-1"
+  to = "/cohort-1.html"
+  status = 200
+[[redirects]]
+  from = "/message"
+  to = "/message.html"
+  status = 200
+[[redirects]]
+  from = "/apply"
+  to = "/apply.html"
+  status = 200
+[[redirects]]
+  from = "/fund-experiments"
+  to = "/fund-experiments.html"
+  status = 200
+[[redirects]]
+  from = "/fund"
+  to = "/fund-experiments.html"
+  status = 200
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+# ---- Custom 404 (keep last) ----
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# ---- Security headers ----
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# ---- Static media: long-cache (content-stable; bust via ?v= when changed) ----
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# CSS lives at a stable path and changes between deploys — always revalidate
+# so updates appear on the next load instead of being frozen for a year.
+[[headers]]
+  for = "/assets/primordia.css"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

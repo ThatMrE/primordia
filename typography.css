@@ -1,0 +1,54 @@
+/* ============================================================
+   PRIMORDIA — BASE
+   Minimal element resets. Tokens come from tokens/*.css.
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--void);
+  color: var(--fg1);
+  font-family: var(--font-futura);
+  font-weight: var(--w-light);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+}
+
+/* Display headings default to Futura caps; reading copy stays light. */
+h1, h2, h3, h4 {
+  font-family: var(--font-futura);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-display);
+  margin: 0;
+}
+
+p { margin: 0; text-wrap: pretty; }
+
+/* Left-rag, never justified; hyphenation off. */
+body, p, .lede, .body { text-align: left; hyphens: none; }
+
+a {
+  color: var(--rgb-blue);
+  text-decoration: none;
+}
+a:hover { color: var(--rgb-red); }
+
+/* No italics for emphasis — weight or color carries it. */
+em, i { font-style: normal; font-weight: var(--w-bold); color: var(--rgb-red); }
+b, strong { font-weight: var(--w-bold); color: inherit; }
+
+/* Radius zero on form controls. */
+button, input, textarea, select {
+  border-radius: var(--radius);
+  font-family: inherit;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line-2); }
+::-webkit-scrollbar-track { background: transparent; }
