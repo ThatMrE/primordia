@@ -1,6 +1,25 @@
 # -*- coding: utf-8 -*-
 import io
-OUT = "/mnt/user-data/outputs/primordia-grants/"
+OUT = "./"
+
+# --- FUNDING CYCLE ---------------------------------------------------
+# Single source of truth for cycle status. Cohort 01 closed on
+# 31 March 2026 and has been delivered; the next call is not announced.
+# To reopen applications: set CYCLE_OPEN = True and fill CYCLE_DEADLINE
+# (e.g. "31 March 2027") and CYCLE_NAME, then re-run this script.
+CYCLE_OPEN     = False
+CYCLE_NAME     = "Cohort 02"
+CYCLE_DEADLINE = ""                       # e.g. "31 March 2027"
+PREV_DEADLINE  = "31 March 2026"          # Cohort 01, closed
+CONTACT        = "hi@primordiagrants.com"
+
+CYCLE_PLATE = (("Deadline &mdash; " + CYCLE_DEADLINE) if (CYCLE_OPEN and CYCLE_DEADLINE)
+               else "Next call &mdash; dates to be announced")
+CYCLE_NOTE  = (("Applications for " + CYCLE_NAME + " are open.")
+               if CYCLE_OPEN else
+               ("Cohort 01 closed " + PREV_DEADLINE + " and is now complete. "
+                "Email <a href=\"mailto:" + CONTACT + "\">" + CONTACT + "</a> "
+                "to be notified when the next call opens."))
 
 MARK = ('<svg class="mk" viewBox="0 0 100 100" width="%d" height="%d" aria-hidden="true">'
         '<g style="isolation:isolate">'
@@ -15,7 +34,8 @@ def head(title, desc):
         '<title>'+title+'</title><meta name="description" content="'+desc+'">'
         '<meta name="theme-color" content="#07080A">'
         '<script>(function(){try{if(localStorage.getItem("pg-theme")==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}})();</script>'
-        '<link rel="stylesheet" href="assets/primordia.css?v=2">'
+        '<link rel="icon" href="assets/marks/favicon.svg" type="image/svg+xml">'
+        '<link rel="stylesheet" href="assets/primordia.css?v=3">'
         '</head><body>')
 
 def nav(active):
@@ -142,7 +162,7 @@ index_body = (
 
 <section class="section"><div class="wrap">
 """
-+kicker('Cohort 01 &middot; live','&sect; 04')+
++kicker('Cohort 01 &middot; complete','&sect; 04')+
 """
   <h2 class="h2" style="margin-top:14px">Our first cohort, selected from 169 applications</h2>
   <p class="lede" style="margin:16px 0 24px">Seven projects across six countries &mdash; climate biotech, wound healing, DNA synthesis, mitochondrial therapy, protein design, single-cell platforms, and histology automation.</p>
@@ -170,7 +190,7 @@ index_body = (
 _faq = [
  ("Q1","Who can apply to Primordia?","Anyone with a clear biology experiment they can run in a compliant lab setting within a few months. Primordia is especially supportive of students, early-career researchers, community-bio members, and independent builders &mdash; you don\u2019t need institutional affiliation or formal credentials. What matters is a concrete plan and the ability to carry out the work safely."),
  ("Q2","Do I need to be part of a community lab to apply?","Not when you apply &mdash; but you do need a realistic plan for where the work will be done by the time the project starts. Primordia supports projects run in appropriate lab environments, and can sometimes help applicants find lab space."),
- ("Q3","When is the application deadline?","For this first funding call, the deadline for submitting your application is 31 March 2026."),
+ ("Q3","When is the application deadline?","The first funding call closed on "+PREV_DEADLINE+" and Cohort 01 is now complete. Dates for the next call have not been announced yet \u2014 email <a href=\"mailto:"+CONTACT+"\">"+CONTACT+"</a> to be notified when applications reopen."),
  ("Q4","What can grant funds be used for?","Running the proposed experiment: reagents, consumables, basic materials, and lab-related fees such as community-lab membership or bench fees. If you\u2019re unsure whether a cost fits, include it in your budget notes and explain how it supports the experiment."),
  ("Q5","How large are the microgrants?","Up to $3,000 per project. Some awards may be smaller depending on scope, budget, and the size of the funding pool for that cohort."),
  ("Q6","How long are projects expected to run?","Most projects produce an initial proof of concept and clear learnings in about three to four months. A slightly longer timeline is possible if the project stays tightly scoped."),
@@ -371,7 +391,7 @@ cohort_body = (
 +grantee('ARG &middot; Sasaki / Perez / Hernandez','Sasaki / Perez / Hernandez','Carroucell: automated histological staining carousel','$1,000')
 +"""
   </div>
-  <p style="margin-top:28px"><a class="btn btn--signal" href="fund-experiments.html">Help enable the next cohort</a> <span class="mono" style="margin-left:10px">Scheduled for late summer 2026</span></p>
+  <p style="margin-top:28px"><a class="btn btn--signal" href="fund-experiments.html">Help enable the next cohort</a> <span class="mono" style="margin-left:10px">Next cohort &mdash; dates to be announced</span></p>
 </div></section>
 """
 )
@@ -513,11 +533,14 @@ def field(qn, fid, label, name, hint, ta=True, opt=False, ph=''):
 
 apply_body = (
 '<section class="hero"><div class="wrap">'
-+kicker('Application &middot; First cycle')+
++kicker('Application')+
 """
   <h1 class="disp" style="font-size:var(--t-display)">Join the<br>primordial soup</h1>
   <p class="lede">Up to $3,000 in flexible microgrants for tightly scoped biology experiments run in community labs. We fund the first decisive experiment &mdash; fast.</p>
-  <div style="margin-top:24px"><span class="plate" style="color:var(--rgb-red);border-color:var(--rgb-red)">Deadline &mdash; 31 March 2026</span></div>
+  """
++'<div style="margin-top:24px"><span class="plate" style="position:static;display:inline-block;background:transparent;color:var(--rgb-red);border:2px solid var(--rgb-red)">'+CYCLE_PLATE+'</span></div>'
++'<p class="note" style="margin-top:16px">'+CYCLE_NOTE+'</p>'
++"""
 </div></section>
 
 <section class="section"><div class="wrap narrow">
@@ -646,7 +669,7 @@ pages = {
  "cohort-1.html": page("Cohort 01 Outcomes — Primordia Grants","Q1 2026 report: 169 applications across 22+ countries and Primordia's inaugural cohort of seven funded projects.","cohort",cohort_body),
  "message.html": page("A Message from the Team — Primordia Grants","A message from the Primordia Grants team on builder-led biotech and the gap Primordia was created to fill.","message",message_body),
  "grantees.html": page("Program & Grantee Handbook — Primordia Grants","What happens after a Primordia grant: the four-month program, cohort support, office hours, public comms, and grant essentials.","grantees",grantees_body),
- "apply.html": page("Apply — Primordia Grants","Apply for a Primordia microgrant. Up to $3,000 for an early-stage biology experiment in a community lab. Deadline 31 March 2026.","apply",apply_body),
+ "apply.html": page("Apply — Primordia Grants","Apply for a Primordia microgrant. Up to $3,000 for an early-stage biology experiment in a community lab.","apply",apply_body),
  "fund-experiments.html": page("Fund Experiments — Primordia Grants","Fund early-stage community biology. Donate via Donorbox or crypto and help move experiments from notebook to bench.","fund",fund_body),
  "thanks.html": page("Thanks — Primordia Grants","Application received.","",thanks_body),
  "404.html": page("Not found — Primordia Grants","Page not found.","",notfound_body),

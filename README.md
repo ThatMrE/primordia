@@ -57,12 +57,29 @@ per surface; radius 0 everywhere; hard 1–2px borders; no shadows; motion is a
 
 ## Editing — regenerate, don't hand-edit
 
-All nine pages are emitted by a single generator, **`build_site.py`** (kept
-alongside this repo, not deployed). Edit content/markup there, then:
+All nine pages are emitted by a single generator, **`build_site.py`**. Edit
+content/markup there, then:
 
 ```bash
 python3 build_site.py        # rewrites all *.html into this folder
 ```
+
+### Funding-cycle status (one place)
+
+Cycle copy is driven by a config block at the top of `build_site.py`, so the
+deadline is never hardcoded across pages:
+
+```python
+CYCLE_OPEN     = False        # True once the next call opens
+CYCLE_NAME     = "Cohort 02"
+CYCLE_DEADLINE = ""           # e.g. "31 March 2027"
+PREV_DEADLINE  = "31 March 2026"   # Cohort 01, closed
+```
+
+With `CYCLE_OPEN = False` the apply page shows *"Next call — dates to be
+announced"* and the FAQ says the first call has closed. **To reopen
+applications:** set `CYCLE_OPEN = True`, fill `CYCLE_DEADLINE`, re-run the
+generator, and push.
 
 Editing the `.html` directly works too, but changes will be overwritten the next
 time the generator runs.

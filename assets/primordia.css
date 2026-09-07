@@ -1,0 +1,769 @@
+/* ============================================================
+   PRIMORDIA // GRANTS — SITE LAYER
+   The component layer. Every page links THIS file; it pulls the
+   Primordia Design System (tokens + base) in first, then defines
+   the site's components on top.
+
+   Brand rules honored here:
+     · >=80% of every surface is void #07080A or bone #F2EFE6
+     · three equal primaries; red is the SIGNAL — once or twice
+       per surface, never decorative
+     · radius 0 everywhere; hard 1-2px borders; no shadows
+     · motion is a cut — 100ms linear, nothing else
+     · no emoji; mono carries labels, plates and registers
+   ============================================================ */
+
+@import url('./ds/styles.css');
+
+/* ============================================================
+   1. THEME
+   The DS ships dark. The toggle sets data-theme="light" on
+   <html>; only the semantic layer flips. The raw --void /
+   --bone tokens NEVER flip — paper surfaces (.section--paper,
+   .panel--bone) set dark ink explicitly and must read the same
+   in both themes.
+   ============================================================ */
+
+:root {
+  --surface:    var(--void-2);              /* raised panel on the page ground */
+  --surface-2:  #12151A;                    /* nested / inset panel */
+  --paper-bg:   var(--bone);                /* paper section ground */
+  --paper-bg-2: var(--newsprint);           /* paper panel ground */
+  --focus:      var(--rgb-blue);
+}
+
+:root[data-theme="light"] {
+  --ground:   #F3F0E7;
+  --surface:  #ECE9DE;
+  --surface-2:#E4E0D3;
+
+  --fg1: var(--fg1-inv);
+  --fg2: var(--fg2-inv);
+  --fg3: var(--fg3-inv);
+
+  --line:   var(--line-ink);
+  --line-2: var(--line-ink-2);
+}
+
+:root:not([data-theme="light"]) { --ground: var(--void); }
+
+html, body {
+  background: var(--ground);
+  color: var(--fg1);
+}
+
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   2. LAYOUT
+   ============================================================ */
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-left: var(--pad-gutter);
+  padding-right: var(--pad-gutter);
+}
+
+.section { padding: var(--pad-section) 0; border-top: var(--bw-hairline) solid var(--line); }
+
+/* Paper sections are a fixed bone ground in BOTH themes. */
+.section--paper {
+  background: var(--paper-bg);
+  color: var(--fg1-inv);
+  border-top: var(--bw) solid var(--void);
+  border-bottom: var(--bw) solid var(--void);
+}
+.section--paper .lede,
+.section--paper .p,
+.section--paper h2,
+.section--paper h3 { color: var(--fg1-inv); }
+.section--paper .lede { color: var(--fg2-inv); }
+
+.center { text-align: center; }
+.center .lede, .center .p { text-align: center; }
+.narrow { max-width: 68ch; }
+.mt-6 { margin-top: var(--s-6); }
+
+.grid { display: grid; gap: var(--s-5); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5); }
+
+/* ============================================================
+   3. TYPE RECIPES not covered by the DS
+   ============================================================ */
+
+.h2 {
+  font-family: var(--font-futura);
+  font-weight: var(--w-bold);
+  font-size: var(--t-h2);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-display);
+  margin: 0;
+}
+
+h3 { font-size: var(--t-h3); }
+h4 { font-size: var(--t-h4); }
+
+.note {
+  font-family: var(--font-futura);
+  font-weight: var(--w-light);
+  font-size: var(--t-small);
+  line-height: var(--lh-body);
+  color: var(--fg2);
+  max-width: 82ch;
+}
+.section--paper .note { color: var(--fg2-inv); }
+
+/* .em is a named register, not italics — the DS forbids italics. */
+.em { font-weight: var(--w-bold); color: var(--rgb-red); }
+.red { color: var(--rgb-red); }
+
+/* ============================================================
+   4. KICKER — the section register line
+   ============================================================ */
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.section--paper .kicker { color: var(--fg3-inv); }
+.kicker .sec { color: var(--rgb-red); }
+
+/* Three equal primaries, in order. The DS restyles bare <i>, so
+   reset it here. */
+.tritick { display: inline-flex; gap: 3px; flex: none; }
+.tritick i {
+  display: block;
+  width: 9px;
+  height: 9px;
+  font-style: normal;
+  font-weight: inherit;
+}
+.tritick i:nth-child(1) { background: var(--rgb-red); }
+.tritick i:nth-child(2) { background: var(--rgb-green); }
+.tritick i:nth-child(3) { background: var(--rgb-blue); }
+
+/* ============================================================
+   5. NAV
+   ============================================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  min-height: var(--nav-h);
+  padding: var(--s-2) var(--pad-gutter);
+  background: var(--ground);
+  border-bottom: var(--bw-hairline) solid var(--line-2);
+}
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--fg1); flex: none; }
+.brand:hover { color: var(--fg1); }
+.brand .mk { flex: none; }
+.word {
+  font-family: var(--font-futura);
+  font-weight: var(--w-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-wordmark);
+  font-size: 15px;
+}
+.brand .sub {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  color: var(--fg3);
+  text-transform: uppercase;
+}
+
+.nav__links { display: flex; align-items: center; gap: var(--s-5); margin-left: auto; }
+.nav__links a {
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg2);
+  padding: 6px 0;
+  border-bottom: var(--bw) solid transparent;
+  transition: color var(--motion-snap) var(--ease);
+}
+.nav__links a:hover { color: var(--fg1); }
+/* Red is the signal: exactly one red mark in the bar — the live tab. */
+.nav__links a.is-active { color: var(--fg1); border-bottom-color: var(--rgb-red); }
+
+.nav__cta { display: flex; align-items: center; gap: var(--s-2); }
+
+.menu-btn, .theme-btn {
+  background: none;
+  border: var(--bw-hairline) solid var(--line-2);
+  color: var(--fg2);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  height: 32px;
+  min-width: 32px;
+  padding: 0 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--motion-snap) var(--ease), border-color var(--motion-snap) var(--ease);
+}
+.menu-btn:hover, .theme-btn:hover { color: var(--fg1); border-color: var(--fg2); }
+.menu-btn { display: none; }
+
+/* Theme icon: a filled disc on dark, a ring on light. No emoji. */
+.theme-btn .ti {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: var(--bw) solid currentColor;
+  border-radius: var(--radius-round);
+  background: currentColor;
+}
+:root[data-theme="light"] .theme-btn .ti { background: transparent; }
+
+/* ============================================================
+   6. BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border: var(--bw) solid var(--fg1);
+  background: var(--fg1);
+  color: var(--ground);
+  cursor: pointer;
+  transition: background var(--motion-snap) var(--ease),
+              color var(--motion-snap) var(--ease),
+              border-color var(--motion-snap) var(--ease);
+}
+.btn:hover { background: transparent; color: var(--fg1); }
+
+.btn--ghost { background: transparent; color: var(--fg1); border-color: var(--line-2); }
+.btn--ghost:hover { background: var(--fg1); color: var(--ground); border-color: var(--fg1); }
+
+/* The signal button — the one red element on the surface. */
+.btn--signal { background: var(--rgb-red); border-color: var(--rgb-red); color: var(--bone); }
+.btn--signal:hover { background: transparent; color: var(--rgb-red); }
+
+.btn--sm { padding: 8px 12px; font-size: var(--t-mono-sm); }
+.btn--lg { padding: 16px 28px; font-size: var(--t-mono); }
+
+:where(a, button, summary, input, textarea, select):focus-visible {
+  outline: var(--bw) solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   7. HERO
+   ============================================================ */
+
+.hero { padding: clamp(48px, 9vw, 104px) 0 var(--pad-section); }
+.hero .disp { margin: var(--s-5) 0 0; }
+.hero .lede { margin-top: var(--s-5); max-width: 62ch; color: var(--fg2); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+
+.hero__media, .figure {
+  position: relative;
+  margin-top: var(--s-7);
+  border: var(--bw) solid var(--line-2);
+}
+.hero__media img, .figure img { width: 100%; height: auto; }
+
+/* Plate register — mono, always legible over the specimen. */
+.plate {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  background: var(--void);
+  color: var(--bone);
+  padding: 5px 9px;
+}
+
+/* ============================================================
+   8. PANELS
+   ============================================================ */
+
+.panel {
+  background: var(--surface);
+  border: var(--bw-hairline) solid var(--line-2);
+  padding: var(--s-5);
+}
+.panel--bone { background: var(--paper-bg); color: var(--fg1-inv); }
+.panel--bone .p { color: var(--fg1-inv); }
+
+/* ============================================================
+   9. STAGES / NUMBERED STEPS
+   ============================================================ */
+
+.stage {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: var(--s-5);
+  align-items: start;
+  padding: var(--s-5) 0;
+  border-top: var(--bw-hairline) solid var(--line);
+}
+.stage .num {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: var(--w-bold);
+  color: var(--fg3);
+  line-height: 1;
+}
+.stage h3 { font-size: var(--t-h3); }
+.stage p { margin-top: var(--s-2); color: var(--fg2); max-width: 68ch; }
+.stage .chk {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--rgb-green);
+  white-space: nowrap;
+}
+
+.snum {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-4) 0;
+  border-top: var(--bw-hairline) solid var(--line);
+}
+.snum .i {
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-weight: var(--w-bold);
+  font-size: 15px;
+  color: var(--rgb-blue);
+}
+.snum p { margin-top: var(--s-2); color: var(--fg2); }
+
+.checklist { display: grid; gap: 0; }
+
+/* ============================================================
+   10. PROJECT CARDS
+   ============================================================ */
+
+.pcard {
+  background: var(--surface);
+  border: var(--bw-hairline) solid var(--line-2);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.pcard.is-highlight { border-color: var(--rgb-red); border-width: var(--bw); }
+.pcard__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); }
+.pcard__name {
+  font-family: var(--font-futura);
+  font-weight: var(--w-bold);
+  font-size: var(--t-h4);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-tight);
+}
+.pcard__amt {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  color: var(--rgb-green);
+  white-space: nowrap;
+}
+.pcard__desc { font-size: var(--t-small); color: var(--fg2); line-height: var(--lh-body); }
+.pcard__meta {
+  margin-top: auto;
+  padding-top: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+/* ============================================================
+   11. STATS / DATA BARS
+   ============================================================ */
+
+.stat { border-top: var(--bw) solid var(--line-2); padding-top: var(--s-3); }
+.stat .n {
+  font-family: var(--font-futura);
+  font-weight: var(--w-bold);
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-tight);
+}
+.stat .n--red   { color: var(--rgb-red); }
+.stat .n--green { color: var(--rgb-green); }
+.stat .n--blue  { color: var(--rgb-blue); }
+.stat .l {
+  margin-top: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.section--paper .stat .l { color: var(--fg3-inv); }
+
+.databar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px 56px;
+  gap: var(--s-4);
+  align-items: center;
+  padding: var(--s-3) 0;
+  border-top: var(--bw-hairline) solid var(--line);
+}
+.databar .lbl { font-size: var(--t-small); color: var(--fg2); }
+.databar .val {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  color: var(--fg1);
+  text-align: right;
+}
+.track { height: 10px; background: var(--surface-2); border: var(--bw-hairline) solid var(--line); }
+.track i { display: block; height: 100%; background: var(--rgb-blue); font-style: normal; }
+.track.green i { background: var(--rgb-green); }
+.track.red i { background: var(--rgb-red); }
+
+.section--paper .track { background: rgba(7,8,10,0.10); border-color: var(--line-ink); }
+.section--paper .databar .lbl { color: var(--fg2-inv); }
+.section--paper .databar .val { color: var(--fg1-inv); }
+
+/* ============================================================
+   12. TAGS
+   ============================================================ */
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg2);
+  border: var(--bw-hairline) solid var(--line-2);
+  padding: 4px 8px;
+  margin: 0 6px 6px 0;
+}
+
+/* ============================================================
+   13. FAQ (<details>)
+   ============================================================ */
+
+.faq__item { border-top: var(--bw-hairline) solid var(--line); }
+.faq__item:last-of-type { border-bottom: var(--bw-hairline) solid var(--line); }
+
+.faq__q {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-4) 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-futura);
+  font-weight: var(--w-book);
+  font-size: var(--t-lede);
+  line-height: var(--lh-tight);
+  transition: color var(--motion-snap) var(--ease);
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q:hover { color: var(--rgb-red); }
+
+.faq__q .qi {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  color: var(--fg3);
+  flex: none;
+}
+
+/* Plus / minus drawn from borders — no glyph, no emoji. */
+.faq__q .plus {
+  position: relative;
+  margin-left: auto;
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.faq__q .plus::before,
+.faq__q .plus::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+}
+.faq__q .plus::before { left: 0; right: 0; top: 6px; height: var(--bw); }
+.faq__q .plus::after  { top: 0; bottom: 0; left: 6px; width: var(--bw); }
+.faq__item[open] .faq__q .plus::after { display: none; }
+
+.faq__a {
+  padding: 0 0 var(--s-5) calc(var(--t-mono) + var(--s-3) + 14px);
+  color: var(--fg2);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  max-width: 82ch;
+}
+
+/* ============================================================
+   14. FORM (Netlify Forms)
+   ============================================================ */
+
+.form { max-width: 760px; }
+.field { padding: var(--s-5) 0; border-top: var(--bw-hairline) solid var(--line); }
+
+.field label {
+  display: block;
+  font-family: var(--font-futura);
+  font-weight: var(--w-book);
+  font-size: var(--t-lede);
+  line-height: var(--lh-tight);
+}
+.field .qn {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  color: var(--rgb-blue);
+  margin-right: var(--s-2);
+}
+.field .opt {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-left: var(--s-2);
+}
+.hint { margin-top: var(--s-2); font-size: var(--t-small); color: var(--fg3); max-width: 76ch; }
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  margin-top: var(--s-4);
+  padding: 12px 14px;
+  background: var(--surface);
+  border: var(--bw-hairline) solid var(--line-2);
+  color: var(--fg1);
+  font-family: var(--font-futura);
+  font-weight: var(--w-light);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  transition: border-color var(--motion-snap) var(--ease);
+}
+.field textarea { min-height: 132px; resize: vertical; }
+.field input:focus,
+.field textarea:focus,
+.field select:focus { border-color: var(--focus); }
+.field input::placeholder, .field textarea::placeholder { color: var(--fg3); }
+
+/* Netlify honeypot — must never be visible or focusable. */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ============================================================
+   15. CRYPTO / WALLET ADDRESSES
+   ============================================================ */
+
+.chain { margin-top: var(--s-5); border-top: var(--bw-hairline) solid var(--line); padding-top: var(--s-4); }
+.chain .lbl {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.addr {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  background: var(--surface);
+  border: var(--bw-hairline) solid var(--line-2);
+}
+.addr span {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: 0.04em;
+  color: var(--fg1);
+  word-break: break-all;
+  text-transform: none;
+}
+.copy {
+  margin-left: auto;
+  flex: none;
+  background: transparent;
+  border: var(--bw-hairline) solid var(--line-2);
+  color: var(--fg2);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: color var(--motion-snap) var(--ease), border-color var(--motion-snap) var(--ease);
+}
+.copy:hover { color: var(--fg1); border-color: var(--fg2); }
+
+/* ============================================================
+   16. LETTER (message page)
+   ============================================================ */
+
+.letter { max-width: 72ch; }
+.letter p { margin-top: var(--s-5); color: var(--fg2); font-size: var(--t-lede); line-height: var(--lh-body); }
+.letter .first { margin-top: var(--s-5); color: var(--fg1); }
+.by {
+  font-family: var(--font-mono);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-top: var(--s-4);
+}
+.sign { margin-top: var(--s-6); padding-top: var(--s-5); border-top: var(--bw-hairline) solid var(--line); color: var(--fg2); }
+
+/* ============================================================
+   17. APPLY STRIP
+   ============================================================ */
+
+.apply-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-5);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--s-7) var(--pad-gutter);
+  background: var(--rgb-green);
+  color: var(--void);
+}
+.apply-strip .h2, .apply-strip p { color: var(--void); }
+.apply-strip p { margin-top: var(--s-3); max-width: 62ch; }
+.apply-strip .btn { background: var(--void); border-color: var(--void); color: var(--bone); }
+.apply-strip .btn:hover { background: transparent; color: var(--void); }
+
+/* ============================================================
+   18. FOOTER
+   ============================================================ */
+
+.footer { border-top: var(--bw) solid var(--line-2); padding: var(--pad-section) 0 var(--s-6); }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--s-7); }
+.footer__collab { margin-top: var(--s-4); font-size: var(--t-small); color: var(--fg2); line-height: var(--lh-body); }
+
+.footer__col h4 {
+  font-family: var(--font-mono);
+  font-weight: var(--w-medium);
+  font-size: var(--t-mono);
+  letter-spacing: var(--tr-mono);
+  color: var(--fg3);
+  text-transform: uppercase;
+}
+.footer__col ul { list-style: none; margin: var(--s-4) 0 0; padding: 0; }
+.footer__col li { margin-bottom: var(--s-3); }
+.footer__col a { font-size: var(--t-small); color: var(--fg2); }
+.footer__col a:hover { color: var(--rgb-red); }
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: var(--bw-hairline) solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-sm);
+  letter-spacing: var(--tr-mono);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+/* ============================================================
+   19. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .databar { grid-template-columns: minmax(0, 1fr) 120px 48px; }
+}
+
+@media (max-width: 760px) {
+  .menu-btn { display: inline-flex; }
+
+  /* Collapsed nav drops as a full-width panel under the bar. */
+  .nav__links {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-left: 0;
+    padding: var(--s-3) var(--pad-gutter) var(--s-5);
+    background: var(--ground);
+    border-bottom: var(--bw-hairline) solid var(--line-2);
+  }
+  .nav__links.open { display: flex; }
+  .nav__links a { width: 100%; padding: var(--s-3) 0; border-bottom: var(--bw-hairline) solid var(--line); }
+  .nav__links a.is-active { border-bottom-color: var(--rgb-red); }
+  .nav { position: sticky; }
+
+  .grid-2, .grid-3, .grid-4, .row2 { grid-template-columns: minmax(0, 1fr); }
+  .footer__grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
+
+  .stage { grid-template-columns: 44px 1fr; }
+  .stage .chk { grid-column: 2; }
+
+  .databar { grid-template-columns: minmax(0, 1fr) 72px; }
+  .databar .track { grid-column: 1; }
+  .databar .val { grid-column: 2; }
+
+  .brand .sub { display: none; }
+  .addr { flex-wrap: wrap; }
+  .copy { margin-left: 0; }
+}
+
+/* ============================================================
+   20. MOTION / PRINT
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: var(--motion-instant) !important; animation: none !important; }
+}
+
+@media print {
+  .nav, .footer, .apply-strip, .menu-btn, .theme-btn { display: none; }
+  html, body { background: #fff; color: #000; }
+}
