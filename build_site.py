@@ -102,7 +102,7 @@ index_body = (
 +kicker('Microgrants &middot; Community biology')+
 """
   <h1 class="disp" style="font-size:var(--t-hero)">Fund the first<br>decisive experiment</h1>
-  <p class="lede">Primordia is a fast, trust-based microgrant layer below traditional grants. We fund the $1,000&ndash;$3,000 killer experiment a builder runs on a community-lab bench &mdash; the one that shows whether an idea is real.</p>
+  <p class="lede">Primordia is a fast, trust-based microgrant layer below traditional grants. We fund the $1,000&ndash;$3,000 killer experiment a builder runs on a community-lab bench. The one that shows whether an idea is real.</p>
   <div class="hero__cta">
     <a class="btn btn--signal" href="apply.html">Apply for a grant</a>
     <a class="btn btn--ghost" href="fund-experiments.html">Fund experiments</a>
@@ -123,12 +123,12 @@ index_body = (
       <div class="disp" style="font-size:34px;margin-top:8px">Primordium</div>
       <div class="mono" style="color:var(--fg3-inv);margin-top:4px">/ pri&middot;mor&middot;di&middot;um / &middot; noun</div>
       <p class="p" style="color:var(--void);margin-top:16px">An organ or tissue in its earliest recognizable stage of development.</p>
-      <p class="p" style="color:var(--fg2-inv);margin-top:12px">Primordia is a collection of those beginnings &mdash; many small, early experiments that can grow into something bigger.</p>
+      <p class="p" style="color:var(--fg2-inv);margin-top:12px">Primordia is a collection of those beginnings. Many small, early experiments that can grow into something bigger.</p>
     </div>
     <div>
       <h2 class="h2">Move ideas out of notebooks and onto the bench</h2>
-      <p class="lede" style="margin-top:16px">Primordia funds focused biology experiments run in community labs and other compliant spaces. Small, fast grants, and a simple structure for sharing lab notes, results, and the story behind them.</p>
-      <p class="lede" style="margin-top:14px">The aim is to lower the activation energy of getting started: enough money to buy reagents and bench time, enough structure to turn a loose idea into a documented result.</p>
+      <p class="lede" style="margin-top:16px">Primordia funds focused biology experiments in community labs and other compliant spaces. Small, fast grants. A simple structure for sharing lab notes, results, and the story behind them.</p>
+      <p class="lede" style="margin-top:14px">We lower the activation energy of starting. Enough money for reagents and bench time. Enough structure to turn a loose idea into a documented result.</p>
     </div>
   </div>
 </div></section>
@@ -143,7 +143,7 @@ index_body = (
   <div class="stage"><div class="num">02</div><div><h3>Review &amp; selection</h3><p>Applications are read by a panel of community-lab leaders and practitioners who know the realities of bench work.</p></div><div class="chk">// Panel</div></div>
   <div class="stage"><div class="num">03</div><div><h3>Microgrant &amp; lab access</h3><p>Selected teams receive a flexible microgrant for reagents, consumables, equipment, and lab membership or bench fees.</p></div><div class="chk">// Up to $3K</div></div>
   <div class="stage"><div class="num">04</div><div><h3>Lab notes &amp; updates</h3><p>Grantees share short public updates during the grant period, building an open portfolio of progress in real time.</p></div><div class="chk">// Monthly</div></div>
-  <div class="stage"><div class="num">05</div><div><h3>Showcase &amp; next steps</h3><p>At the end of the cycle, projects share results in a public session and a written summary &mdash; the start of what comes next.</p></div><div class="chk">// Output</div></div>
+  <div class="stage"><div class="num">05</div><div><h3>Showcase &amp; next steps</h3><p>At the end of the cycle, projects share results in a public session and a written summary. The start of what comes next.</p></div><div class="chk">// Output</div></div>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -154,7 +154,7 @@ index_body = (
   <p class="lede" style="margin:16px 0 24px">Each of these started as an early experiment on a community bench. Proof of what small beginnings become.</p>
   <div class="grid grid-4">
     <div class="pcard"><div class="pcard__name" style="font-size:16px">Real Vegan Cheese</div><div class="pcard__desc">Engineered yeast to produce milk proteins for animal-free cheese.</div><div class="pcard__meta">BioCurious &middot; SF</div></div>
-    <div class="pcard"><div class="pcard__name" style="font-size:16px">Bento Bio</div><div class="pcard__desc">A portable DNA lab &mdash; PCR, thermocycler, power, and gel box in one.</div><div class="pcard__meta">Biohackspace &middot; London</div></div>
+    <div class="pcard"><div class="pcard__name" style="font-size:16px">Bento Bio</div><div class="pcard__desc">A portable DNA lab. PCR, thermocycler, power, and gel box in one.</div><div class="pcard__meta">Biohackspace &middot; London</div></div>
     <div class="pcard"><div class="pcard__name" style="font-size:16px">Opentrons</div><div class="pcard__desc">A low-cost liquid-handling robot to automate basic biology workflows.</div><div class="pcard__meta">Genspace &middot; NYC</div></div>
     <div class="pcard"><div class="pcard__name" style="font-size:16px">Open Insulin</div><div class="pcard__desc">A small-scale, community model for producing insulin.</div><div class="pcard__meta">Counter Culture &middot; Oakland</div></div>
   </div>
@@ -165,7 +165,7 @@ index_body = (
 +kicker('Cohort 01 &middot; complete','&sect; 04')+
 """
   <h2 class="h2" style="margin-top:14px">Our first cohort, selected from 169 applications</h2>
-  <p class="lede" style="margin:16px 0 24px">Seven projects across six countries &mdash; climate biotech, wound healing, DNA synthesis, mitochondrial therapy, protein design, single-cell platforms, and histology automation.</p>
+  <p class="lede" style="margin:16px 0 24px">Seven projects across six countries. Climate biotech, wound healing, DNA synthesis, mitochondrial therapy, protein design, single-cell platforms, and histology automation.</p>
   <div class="grid grid-4" style="margin-bottom:28px">
     <div class="stat"><div class="n n--green">$13,200</div><div class="l">Total funded</div></div>
     <div class="stat"><div class="n">7</div><div class="l">Projects &middot; 11 builders</div></div>
@@ -189,7 +189,7 @@ index_body = (
 
 _faq = [
  ("Q1","Who can apply to Primordia?","Anyone with a clear biology experiment they can run in a compliant lab setting within a few months. Primordia is especially supportive of students, early-career researchers, community-bio members, and independent builders &mdash; you don\u2019t need institutional affiliation or formal credentials. What matters is a concrete plan and the ability to carry out the work safely."),
- ("Q2","Do I need to be part of a community lab to apply?","Not when you apply &mdash; but you do need a realistic plan for where the work will be done by the time the project starts. Primordia supports projects run in appropriate lab environments, and can sometimes help applicants find lab space."),
+ ("Q2","Do I need to be part of a community lab to apply?","Not when you apply, but you do need a realistic plan for where the work will be done by the time the project starts. Primordia supports projects run in appropriate lab environments, and can sometimes help applicants find lab space."),
  ("Q3","When is the application deadline?","The first funding call closed on "+PREV_DEADLINE+" and Cohort 01 is now complete. Dates for the next call have not been announced yet \u2014 email <a href=\"mailto:"+CONTACT+"\">"+CONTACT+"</a> to be notified when applications reopen."),
  ("Q4","What can grant funds be used for?","Running the proposed experiment: reagents, consumables, basic materials, and lab-related fees such as community-lab membership or bench fees. If you\u2019re unsure whether a cost fits, include it in your budget notes and explain how it supports the experiment."),
  ("Q5","How large are the microgrants?","Up to $3,000 per project. Some awards may be smaller depending on scope, budget, and the size of the funding pool for that cohort."),
@@ -220,7 +220,7 @@ about_body = (
   <div class="grid grid-2" style="gap:32px;align-items:start;margin-top:14px">
     <div>
       <h2 class="h2">Early research results are stories</h2>
-      <p class="lede" style="margin-top:16px">Community labs, DIY-bio clubs, and biohacker spaces let people do real biology without waiting for supervisors, university positions, or big grants &mdash; turning curiosity into concrete experiments in months, not years.</p>
+      <p class="lede" style="margin-top:16px">Community labs, DIY-bio clubs, and biohacker spaces let people do real biology. No supervisor, no university position, no big grant. Curiosity becomes a concrete experiment in months, not years.</p>
       <p class="lede" style="margin-top:14px">Beyond access to equipment, they help builders create a proof of concept and a public narrative for their work.</p>
       <p class="note" style="margin-top:20px;color:var(--void)">That story is what makes funders and stakeholders listen closely, and gives builders a chance at future support.</p>
     </div>
@@ -247,10 +247,10 @@ about_body = (
 """
   <h2 class="h2" style="margin-top:14px">Primordia funds many small beginnings</h2>
   <div class="grid grid-4" style="margin-top:24px">
-    <div class="panel"><div class="mono" style="color:var(--rgb-green)">Grant ceiling</div><div class="disp" style="font-size:40px;margin-top:8px">$3,000</div><p class="p" style="margin-top:8px">Per microgrant. Covers months of membership, reagents, and materials &mdash; enough to enable a minimal viable experiment.</p></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-green)">Grant ceiling</div><div class="disp" style="font-size:40px;margin-top:8px">$3,000</div><p class="p" style="margin-top:8px">Per microgrant. Covers months of membership, reagents, and materials. Enough for a minimal viable experiment.</p></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-green)">Conditions</div><div class="disp" style="font-size:40px;margin-top:8px">No strings</div><p class="p" style="margin-top:8px">No strings attached. The work and its learnings belong to the builder.</p></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-green)">Overhead</div><div class="disp" style="font-size:40px;margin-top:8px">5%</div><p class="p" style="margin-top:8px">Primordia keeps only 5% as overhead, covering digital service fees.</p></div>
-    <div class="panel"><div class="mono" style="color:var(--rgb-green)">Scope</div><div class="disp" style="font-size:40px;margin-top:8px">One MVE</div><p class="p" style="margin-top:8px">A focused, minimal viable biology experiment &mdash; the first decisive test.</p></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-green)">Scope</div><div class="disp" style="font-size:40px;margin-top:8px">One MVE</div><p class="p" style="margin-top:8px">A focused, minimal viable biology experiment. The first decisive test.</p></div>
   </div>
 </div></section>
 
@@ -332,7 +332,7 @@ cohort_body = (
 """
   <h2 class="h2" style="margin-top:14px">What the pool is really saying</h2>
   <div class="grid grid-3" style="margin-top:24px">
-    <div class="panel"><div class="mono" style="color:var(--rgb-red)">A // One</div><h3 style="margin-top:8px;font-size:18px">Builder-led biotech</h3><p class="p" style="margin-top:8px">Nearly equal weight between disease-targeted ideas and platform tech &mdash; the picks and shovels of biology.</p><div class="stat" style="margin-top:14px"><div class="n n--green" style="font-size:30px">89</div><div class="l">Health + research tools</div></div></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-red)">A // One</div><h3 style="margin-top:8px;font-size:18px">Builder-led biotech</h3><p class="p" style="margin-top:8px">Nearly equal weight between disease-targeted ideas and platform tech. The picks and shovels of biology.</p><div class="stat" style="margin-top:14px"><div class="n n--green" style="font-size:30px">89</div><div class="l">Health + research tools</div></div></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-red)">B // Two</div><h3 style="margin-top:8px;font-size:18px">Climate &amp; food, a second wave</h3><p class="p" style="margin-top:8px">Crop stress, plant tools, waste valorisation, biogas, plastics, water quality, monitoring.</p><div class="stat" style="margin-top:14px"><div class="n n--green" style="font-size:30px">43</div><div class="l">Climate + food &middot; 25.4%</div></div></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-red)">C // Three</div><h3 style="margin-top:8px;font-size:18px">Microbes are the default chassis</h3><p class="p" style="margin-top:8px">Bacteria, fungi, yeast, mycelium: fast, tractable, low-cost, suited to short loops.</p><div class="stat" style="margin-top:14px"><div class="n n--green" style="font-size:30px">56</div><div class="l">Microbial &middot; 33.1%</div></div></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-red)">D // Four</div><h3 style="margin-top:8px;font-size:18px">AI in hybrid workflows</h3><p class="p" style="margin-top:8px">Most AI proposals pair wet-lab validation, diagnostics, or automation with the model.</p><div class="stat" style="margin-top:14px"><div class="n n--green" style="font-size:30px">17</div><div class="l">AI-foregrounded &middot; 10.1%</div></div></div>
@@ -375,7 +375,7 @@ cohort_body = (
 +kicker('Welcoming Cohort 01','&sect; 05')+
 """
   <h2 class="h2" style="margin-top:14px">Seven projects, six countries</h2>
-  <p class="lede" style="margin:16px 0 24px">Spanning climate biotech, wound healing, DNA synthesis, mitochondrial therapy, protein design, single-cell platforms, and histology automation &mdash; funded across India, Australia, Mexico, Italy, the United States, and Argentina.</p>
+  <p class="lede" style="margin:16px 0 24px">Spanning climate biotech, wound healing, DNA synthesis, mitochondrial therapy, protein design, single-cell platforms, and histology automation. Funded across India, Australia, Mexico, Italy, the United States, and Argentina.</p>
   <div class="grid grid-2" style="margin-bottom:24px">
     <div class="stat"><div class="n n--green">$13,200</div><div class="l">Total funded &middot; 7 projects &middot; 11 builders</div></div>
     <div class="stat"><div class="n">7 / 6</div><div class="l">Projects / countries</div></div>
@@ -398,23 +398,23 @@ cohort_body = (
 
 # ===================================================================== MESSAGE
 _paras = [
- ('first',"Just six months ago, Primordia Grants was still only an idea \u2014 a thought experiment shared between the founders of ValleyDAO and Biopunk Community Lab."),
- ('',"ValleyDAO first met Biopunk before they moved into Frontier Tower, at a moment when both groups were circling the same question from very different directions: what would it take for more people to actually build in biotech?"),
- ('',"For ValleyDAO, a largely Europe-centered organization, Biopunk represented something we rarely encountered at this level of intensity: a self-organized biotech community focused not only on networking, education, or startup storytelling, but on actual wet-lab access, experimentation, and practical biotechnology. Community biotech had often been discussed as a cultural movement. Biopunk made it feel operational."),
+ ('first',"Just six months ago, Primordia Grants was still only an idea. A thought experiment shared between the founders of ValleyDAO and Biopunk Community Lab."),
+ ('',"ValleyDAO met Biopunk before they moved into Frontier Tower. Both groups were circling the same question from different directions: what would it take for more people to build in biotech?"),
+ ('',"ValleyDAO is mostly Europe-centered, and we rarely met anything at this intensity. Biopunk is a self-organized biotech community. Not networking, education, or startup storytelling, but wet-lab access and real experiments. Most people talk about community biotech as a cultural movement. Biopunk made it operational."),
  ('em',"That made the partnership obvious."),
- ('',"Biopunk brought the tacit knowledge of community biotech: how to build labs, gather people, create educational materials, teach responsible experimentation, and make wet-lab work feel less distant from the people who are hungry to learn it. ValleyDAO brought its track record in alternative biotech funding, scientific review, online funding program operations, and the ability to move quickly around early research opportunities."),
- ('',"Together, we came to the same conclusion: community biotech builders are an underserved group, but they are far more capable than most of the traditional biotech ecosystem assumes."),
+ ('',"Biopunk brought the tacit knowledge of community biotech. How to build a lab, gather people, teach responsible experiments, and put wet-lab work within reach of the people who want to learn it. ValleyDAO brought a track record in alternative biotech funding, scientific review, and running funding programs online. We also move fast on early research."),
+ ('',"We reached the same conclusion. Community biotech builders are underserved, and far more capable than the traditional biotech ecosystem assumes."),
  ('',"The conditions around them have also changed. Used lab equipment is more available than it was during the first wave of DIY biology. Protocols, troubleshooting advice, design tools, and scientific literature are easier to access. AI reasoning models are beginning to help young scientists and independent builders frame hypotheses and design experiments. None of this makes biology easy. Biology still humbles everyone. But it does change the threshold for what a serious first experiment can look like."),
  ('',"The previous wave of community biotech was mostly about access: proving that biology did not have to live only inside universities, companies, and government labs. That work built the social and physical infrastructure that made the next wave possible."),
  ('em',"What Primordia has started to see is something different."),
  ('',"The new wave is more builder-led. It is less defined by the right to access biotechnology, and more by the will to use biotechnology to test real ideas. These builders are often young, technically fluent, impatient, and deeply practical. Some have PhDs. Many do not. What they share is not a credential. It is the urge to run the experiment."),
- ('',"Our first cohort was selected from 169 applications. Across those applications, we saw a pattern that still needs to be proven, but feels important: many builders do not need a full research grant to get started. They need enough support to run the killer experiment. The first decisive experiment. The one that tells them whether the idea is real enough to keep going."),
+ ('',"Our first cohort was selected from 169 applications. Across those applications we saw a pattern. It still needs proving, but it matters: most builders do not need a full research grant to start. They need enough support to run the killer experiment. The first decisive experiment. The one that tells them whether the idea is real enough to keep going."),
  ('',"In the right environment, that experiment may cost $1,000 to $3,000. It may happen in a community lab, a university maker space, a friendly academic lab, or another compliant low-cost setting. If the result is strong, it can become the basis for follow-on funding from larger philanthropies, venture capital, translational grants, or more ambitious research programs."),
  ('em',"That is the gap Primordia was created to fill."),
- ('',"In a world increasingly dominated by software, AI, and digital infrastructure, the next generation of biotech builders is hungry to work on physical reality again: health, food, manufacturing, materials, energy, climate, and the biological systems that underpin them all. They are looking for the smallest credible path from idea to experiment."),
- ('',"We believe this first cohort is more than a collection of small grants. It is an early test of whether a new funding layer can exist below traditional grants, below accelerators, and below venture capital: a fast, lightweight, trust-based layer for people who are ready to build, but not yet legible to the systems that usually fund science."),
- ('',"We are deeply grateful to everyone who supported Primordia before it had a track record, a portfolio, or even proof that this thesis would resonate. In particular, we want to thank the Kris Rockwell Foundation for its generous early support and for believing in the mission before there was any project dealflow to point to."),
- ('',"Primordia began as a thought experiment. Six months later, it feels like a signal. A signal that builder-led biotech is here \u2014 and that with the right support, the next era of biotechnology may come from far more places, and far more people, than the world currently expects."),
+ ('',"Software, AI, and digital infrastructure dominate. The next generation of biotech builders wants to work on physical reality again: health, food, manufacturing, materials, energy, climate, and the biology under all of them. They want the smallest credible path from idea to experiment."),
+ ('',"We believe this first cohort is more than a collection of small grants. It tests whether a funding layer can sit below traditional grants, accelerators, and venture capital. Fast, light, and built on trust. For people ready to build, who the usual systems cannot yet read."),
+ ('',"We are grateful to everyone who backed Primordia before it had a track record, a portfolio, or proof that the thesis would land. We thank the Kris Rockwell Foundation in particular. They gave early support and believed in the mission when we had no dealflow to point to."),
+ ('',"Primordia began as a thought experiment. Six months later, it feels like a signal. Builder-led biotech is here. With the right support, the next era of biotechnology comes from far more places, and far more people, than the world expects."),
  ('em',"Primordia is now actively soliciting donations for its next cohort. If you\u2019d like to support, reach out through hi@primordiagrants.com."),
 ]
 def letter_paras(ps):
@@ -455,7 +455,7 @@ grantees_body = (
 """
 +kicker('The next four months','&sect; 01')+
 """
-  <h2 class="h2" style="margin-top:14px">Complete a meaningful experiment &mdash; and make it visible</h2>
+  <h2 class="h2" style="margin-top:14px">Complete a meaningful experiment, and make it visible</h2>
   <div class="grid grid-4" style="margin-top:24px">
     <div class="panel"><div class="disp" style="font-size:30px;color:var(--rgb-red)">01</div><h3 style="margin-top:8px">Start</h3><p class="p" style="margin-top:8px">Agreement signed, banking details submitted, grant wired, project baseline clarified.</p><div class="mono" style="color:var(--rgb-green);margin-top:14px">// Welcome session</div></div>
     <div class="panel"><div class="disp" style="font-size:30px;color:var(--rgb-red)">02</div><h3 style="margin-top:8px">Build</h3><p class="p" style="margin-top:8px">Run the experiment, document decisions, track spend, and use office hours for blockers.</p><div class="mono" style="color:var(--rgb-green);margin-top:14px">// Monthly updates</div></div>
@@ -498,14 +498,14 @@ grantees_body = (
 """
 +kicker('Grant essentials','&sect; 04')+
 """
-  <h2 class="h2" style="margin-top:14px">The contract matters; the principle is simple</h2>
+  <h2 class="h2" style="margin-top:14px">The contract matters. The principle is simple</h2>
   <p class="lede" style="margin:16px 0 24px">Use the funds for the approved project, communicate material changes, document the work, and share a substantial public output.</p>
   <div class="grid grid-3">
-    <div class="panel"><div class="mono" style="color:var(--rgb-green)">01 // Funds</div><h3 style="margin-top:8px;font-size:17px">Spend on the approved project</h3><p class="p" style="margin-top:8px">Use grant funds only for the approved project and budget. Keep expenses identifiable; retain receipts.</p></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-green)">01 // Funds</div><h3 style="margin-top:8px;font-size:17px">Spend on the approved project</h3><p class="p" style="margin-top:8px">Use grant funds only for the approved project and budget. Keep expenses identifiable. Keep receipts.</p></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-green)">02 // Safety</div><h3 style="margin-top:8px;font-size:17px">Stay within scope</h3><p class="p" style="margin-top:8px">Stay within the approved research scope, location, biosafety level, and applicable legal or ethics requirements.</p></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-green)">03 // Changes</div><h3 style="margin-top:8px;font-size:17px">Tell us before major pivots</h3><p class="p" style="margin-top:8px">Flag major changes to scope, methods, team, location, or budget. We can usually work through reasonable pivots.</p></div>
-    <div class="panel"><div class="mono" style="color:var(--rgb-green)">04 // Reporting</div><h3 style="margin-top:8px;font-size:17px">Results + financials</h3><p class="p" style="margin-top:8px">Provide technical/results reporting and final financial accounting. Make the work understandable and useful.</p></div>
-    <div class="panel"><div class="mono" style="color:var(--rgb-green)">05 // Open output</div><h3 style="margin-top:8px;font-size:17px">Make results public</h3><p class="p" style="margin-top:8px">Make all or a substantial portion of your results public &mdash; report, preprint, dataset, protocol, code.</p></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-green)">04 // Reporting</div><h3 style="margin-top:8px;font-size:17px">Results + financials</h3><p class="p" style="margin-top:8px">Give technical and results reporting, plus final financial accounting. Make the work understandable and useful.</p></div>
+    <div class="panel"><div class="mono" style="color:var(--rgb-green)">05 // Open output</div><h3 style="margin-top:8px;font-size:17px">Make results public</h3><p class="p" style="margin-top:8px">Make all or a substantial portion of your results public. A report, preprint, dataset, protocol, or code.</p></div>
     <div class="panel"><div class="mono" style="color:var(--rgb-green)">06 // Publicity</div><h3 style="margin-top:8px;font-size:17px">Acknowledge the program</h3><p class="p" style="margin-top:8px">Acknowledge Primordia, ValleyDAO, and Biopunk Lab where relevant. Primordia may publicize non-confidential award info.</p></div>
   </div>
   <div class="checklist" style="margin-top:32px">
@@ -536,7 +536,7 @@ apply_body = (
 +kicker('Application')+
 """
   <h1 class="disp" style="font-size:var(--t-display)">Join the<br>primordial soup</h1>
-  <p class="lede">Up to $3,000 in flexible microgrants for tightly scoped biology experiments run in community labs. We fund the first decisive experiment &mdash; fast.</p>
+  <p class="lede">Up to $3,000 in flexible microgrants for tightly scoped biology experiments run in community labs. We fund the first decisive experiment, fast.</p>
   """
 +'<div style="margin-top:24px"><span class="plate" style="position:static;display:inline-block;background:transparent;color:var(--rgb-red);border:2px solid var(--rgb-red)">'+CYCLE_PLATE+'</span></div>'
 +'<p class="note" style="margin-top:16px">'+CYCLE_NOTE+'</p>'
@@ -594,7 +594,7 @@ fund_body = (
 +kicker('Fund experiments')+
 """
   <h1 class="disp" style="font-size:var(--t-display)">Fund experiments</h1>
-  <p class="lede">Primordia turns your donations into visible experiments and community capacity &mdash; not overhead and jargon.</p>
+  <p class="lede">Primordia turns your donations into visible experiments and community capacity, not overhead and jargon.</p>
   <div class="hero__cta">
     <a class="btn btn--signal" href="https://donorbox.org/primordia-microgrants" target="_blank" rel="noopener">Become a donor</a>
     <a class="btn btn--ghost" href="mailto:hi@primordiagrants.com?subject=Themed%20Round%20Partnerships">Partner on a themed round</a>
@@ -639,7 +639,7 @@ fund_body = (
 +kicker('Donor FAQs','&sect; 03')+
 '<h2 class="h2" style="margin:14px 0 28px">Questions</h2>'
 +faq_html([
-  ("D1","Do you accept donations in crypto?","Yes &mdash; ETH, USDC, and USDT, on Mainnet Ethereum and Base. The wallet addresses are listed above."),
+  ("D1","Do you accept donations in crypto?","Yes. ETH, USDC, and USDT, on Mainnet Ethereum and Base. The wallet addresses are listed above."),
   ("D2","Can donors remain anonymous?","Yes. Donors can choose to be publicly named, listed without an amount, or remain fully anonymous."),
   ("D3","What can grant funds be used for?","Helping applicants run their proposed experiment: reagents, consumables, basic materials, and lab-related fees such as community-lab membership or bench fees."),
   ("D4","How large are the microgrants?","Up to $3,000 per project. Some awards may be smaller depending on scope, budget, and the size of the funding pool for that cohort."),
