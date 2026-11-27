@@ -54,7 +54,7 @@ export async function fetchDonations({ email, apiKey, since, fetchImpl = fetch }
   return out;
 }
 
-async function existingReferences({ base, token, fetchImpl }) {
+export async function existingReferences({ base, token, fetchImpl = fetch }) {
   const refs = new Set();
   let offset = '';
   do {

@@ -13,10 +13,11 @@ This guide covers the live setup and the monthly routine. The plan behind it is 
 | `/review/community` | Former applicants score assigned applications on seven criteria. | Reviewers and Reviews tables |
 | `donorbox-sync` (hourly) | Pulls new Donorbox gifts into the Donations table. | Donorbox API |
 | `donorbox-webhook` | Donorbox calls it after each gift. It starts the same pull at once. | Donorbox API |
+| `crypto-import` (daily) | Adds new gifts to the two public addresses to the Donations table, marked Needs review. | Blockscout (Ethereum), public Base node, CoinGecko price |
 
 ## The Airtable base
 
-Base: **Primordia Grants** (`appqAetz00yR7g8Do`), in your Airtable workspace. Tables: Grants, Updates, Cycles, Donations, Reviewers, Reviews. The seven Cohort 01 projects and the Cohort 01 cycle row are already in it.
+Base: **Primordia Grants** (`appqAetz00yR7g8Do`), in your Airtable workspace. Tables: Grants, Updates, Cycles, Donations, Reviewers, Reviews, Settings. The seven Cohort 01 projects and the Cohort 01 cycle row are already in it.
 
 Applications stay where they are today. The review deck reads them through `AIRTABLE_BASE_ID` and `AIRTABLE_TABLE_ID`.
 
@@ -34,6 +35,8 @@ Set these in Netlify, Site configuration, Environment variables. Never put a val
 | `DONORBOX_WEBHOOK_TOKEN` | Functions | A long random string you make |
 | `NETLIFY_BUILD_HOOK_URL` | Functions | A build hook for `main`, from Netlify, Build and deploy, Build hooks |
 | `COMMUNITY_CYCLE` | Functions | The open cycle, for example `2027-01` |
+| `CRYPTO_IMPORT_FROM` | Functions | First day the crypto import reads, for example `2027-01-01`. Default `2027-01-01`. |
+| `ETH_RPC_URL`, `BASE_RPC_URL` | Functions | Optional. A private node URL if the free public nodes stop answering. |
 | `COMMUNITY_SCORES_VISIBLE` | Functions | Leave unset during the pilot. Set to `true` after the go decision. |
 | `REVIEW_ACCESS_KEY`, `AIRTABLE_*`, `ANTHROPIC_API_KEY` | Functions | As in `docs/REVIEW-DECK.md` |
 
@@ -51,21 +54,45 @@ Set these in Netlify, Site configuration, Environment variables. Never put a val
 5. In Netlify, create a build hook on `main`. Add all variables above. Redeploy.
 6. Open the Primordia monthly update form in Airtable and publish it: https://airtable.com/appqAetz00yR7g8Do/pagBCpkHN9N4GYOx1/edit
 
-## The monthly update link
+## Airtable automations
 
-Each grantee gets a link that fills in their project and hides the field:
+Five automations exist in the base as drafts. Airtable keeps a new automation off until a person turns it on. Open each one, press Test, then turn it on.
+
+| Automation | When | What it does |
+|---|---|---|
+| Monthly update request | The 1st, 15:00 UTC | Emails each grantee whose grant Status is In progress and who has a Grantee email. The email has their prefilled update form link. |
+| Monthly update reminder | The 10th, 15:00 UTC | Emails the same grantees again if Updated this month is 0. |
+| Stamp last update on the grant | A new Updates row | Sets Last update on the grant with the same Slug. The reminder uses it. |
+| Rebuild site when a grant is published | Publish checked on Grants | Calls the build hook in the Settings table. |
+| Rebuild site when an update is published | Publish checked on Updates | Calls the build hook in the Settings table. |
+
+Before you turn them on:
+
+1. Publish the update form. The emails link to it.
+2. Paste the Netlify build hook URL into the Settings table, row "Netlify build hook URL".
+3. Set Status to In progress and fill Grantee email on each active grant. Only those grantees get email.
+
+Each grantee's link fills in their project and hides the field:
 
 ```
 https://airtable.com/appqAetz00yR7g8Do/pagBCpkHN9N4GYOx1/form?prefill_Grant+slug=open-synth&hide_Grant+slug=true
 ```
 
-Change `open-synth` to the grant's Slug. The send on the 1st and the reminder on the 10th are Airtable automations. Build them from the Grants table: filter Status "In progress", send an email with the link above. The grantee email stays in the private Grantee email field.
+## Crypto gifts
 
-## Publishing
+The daily import reads new transfers to the two public addresses from `CRYPTO_IMPORT_FROM` on.
 
-- A grant appears on `/projects` when its Publish box is checked and the site builds.
-- An update appears on its grant page when its Publish box is checked and the site builds.
-- Add an Airtable automation "When Publish is checked" on Grants and on Updates. Its action: send a POST to the Netlify build hook. The site then updates within about two minutes.
+| Chain | Read | Not read |
+|---|---|---|
+| Ethereum | USDC, USDT, DAI, plain ETH | Any other token |
+| Base | USDC, USDbC | Plain ETH, any other token |
+
+- Transfers under $1 are skipped. Unknown tokens are skipped, because spam airdrops use look-alike names.
+- Plain ETH is valued at the CoinGecko price on the day received.
+- Every imported row has **Needs review** checked. The website ignores it until a person confirms it is a gift and unchecks the box. Delete rows that are not gifts.
+- Rows of $5,000 or more carry a "Large transfer" note.
+
+**Important.** The Ethereum address also receives large transfers that are not gifts: $50,000 USDC on 2026-10-08 and $234,032 USDC on 2026-11-24. If the address is a shared treasury, give Primordia its own donation addresses. Change them in `scripts/site-data.mjs`, in `CRYPTO_ADDRESSES`.
 
 ## The monthly routine
 
@@ -93,6 +120,5 @@ Change `open-synth` to the grant's Slug. The send on the 1st and the reminder on
 
 ## What is not built yet
 
-- The daily import of crypto transfers to the two public addresses. Record them by hand in Donations until then, with the transaction hash as Reference.
-- The Airtable automations for the monthly email, the reminder, and the build hook on Publish. They are configured in Airtable, not in this repository.
+- Plain ETH gifts on Base. Record them by hand in Donations, with the transaction hash as Reference.
 - The GitHub organization. The code owners file, templates and Dependabot are ready to move with the repository.

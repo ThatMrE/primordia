@@ -3,12 +3,12 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
-  DEFAULT_DONORBOX, MIN_POOL, OVERHEAD_RATE, backedByGrant, budgetLabel, escapeHtml as h,
+  CRYPTO_ADDRESSES, DEFAULT_DONORBOX, MIN_POOL, OVERHEAD_RATE, backedByGrant, budgetLabel, escapeHtml as h,
   ledgerSummary, money, monthLabel, safeUrl, updatesBySlug,
 } from './site-data.mjs';
 
-const ETH = '0xD920E60b798A2F5a8332799d8a23075c9E77d5F8';
-const BASE = '0xe580BfFE2f427479483395fA6A563C07f7ad33Fc';
+const ETH = CRYPTO_ADDRESSES.ethereum;
+const BASE = CRYPTO_ADDRESSES.base;
 
 function page({ title, description, body, styles = [], scripts = [] }) {
   return `<!doctype html>
@@ -188,7 +188,7 @@ export function renderDonate({ grants, ledger }, today = new Date()) {
 </section>
 <section class="crypto wrap" aria-labelledby="crypto-title">
   <h2 id="crypto-title">Give in crypto</h2>
-  <p>ETH, USDC and USDT, on Ethereum mainnet or Base.</p>
+  <p>ETH, USDC, USDT or DAI on Ethereum mainnet, or USDC on Base. Gifts to these addresses enter the open ledger after the team confirms each one.</p>
   <div class="chain"><p class="lbl">Ethereum mainnet</p><div class="addr"><span id="eth">${ETH}</span><button class="copy" data-target="eth" type="button">Copy</button></div></div>
   <div class="chain"><p class="lbl">Base</p><div class="addr"><span id="base">${BASE}</span><button class="copy" data-target="base" type="button">Copy</button></div></div>
 </section>`;

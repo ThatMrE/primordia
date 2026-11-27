@@ -1,6 +1,6 @@
 # 03. Monthly grantee updates through one Airtable form
 
-Status: built. The Updates table, the update form (unpublished) and the timeline on each grant page exist. Waiting on: publish the form, build the two email automations in Airtable.
+Status: built. The Updates table, the update form (unpublished), the timeline on each grant page, and the request, reminder and stamp automations exist (drafts, off). Waiting on: publish the form, turn the automations on.
 
 ## Outcome
 

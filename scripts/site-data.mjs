@@ -4,6 +4,11 @@
 export const OVERHEAD_RATE = 0.05;
 export const MIN_POOL = 3000;
 export const DEFAULT_DONORBOX = 'https://donorbox.org/primordia-microgrants';
+// Public donation addresses, one per chain. The import reads only these.
+export const CRYPTO_ADDRESSES = {
+  ethereum: '0xD920E60b798A2F5a8332799d8a23075c9E77d5F8',
+  base: '0xe580BfFE2f427479483395fA6A563C07f7ad33Fc',
+};
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -74,7 +79,7 @@ export function cycleFromRecord(record) {
 export function donationFromRecord(record) {
   const f = record.fields || {};
   const gross = num(f.Gross);
-  if (gross == null || !text(f.Date)) return null;
+  if (gross == null || !text(f.Date) || bool(f['Needs review'])) return null;
   const fees = num(f.Fees) ?? 0;
   return {
     date: text(f.Date),

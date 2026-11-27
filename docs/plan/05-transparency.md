@@ -1,6 +1,6 @@
 # 05. Transparency by construction
 
-Status: built. `/donate` shows the open ledger. The Donorbox hourly pull and webhook exist. Waiting on: Donorbox API add-on, keys in Netlify. Crypto import not built.
+Status: built. `/donate` shows the open ledger. The Donorbox hourly pull and webhook, and the daily crypto import with review, exist. Waiting on: Donorbox API add-on, keys in Netlify.
 
 ## Outcome
 
