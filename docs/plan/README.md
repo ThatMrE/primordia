@@ -15,7 +15,8 @@ Primordia gives away money every month, not once a year. Applications stay open 
 | `02-grants-on-website.md` | Selected grants read from Airtable and shown on the site automatically | Integration agent | 3 days |
 | `03-monthly-updates.md` | Airtable form for grantee updates that updates the grant pages | Integration agent | 2 days |
 | `04-monthly-giving.md` | Monthly grant cycle with fast decisions and continuous donations | Program agent + panel lead | 5 days design, then monthly |
-| `05-transparency.md` | Public ledger, pipeline numbers, decision times, overhead | Integration agent | 3 days |
+| `05-transparency.md` | Public ledger, Donorbox webhook and reconciliation, pipeline numbers, decision times, overhead | Integration agent | 5 days |
+| `06-community-review.md` | Former applicants score current applications as a third signal | Integration agent + panel lead | 3 days, then a two-cycle pilot |
 
 ## How to critique (72 hours)
 
@@ -37,8 +38,9 @@ Primordia gives away money every month, not once a year. Applications stay open 
 
 1. `01` first: nothing else merges safely without it.
 2. `02` and `03` together: they share one Airtable base and one sync script.
-3. `05` next: it reuses the same sync.
+3. `05` next: it reuses the same sync. Its Donorbox part can start as soon as `01` lands.
 4. `04` runs in parallel as a process design. Its software needs are small and land in `02`, `03` and `05`.
+5. `06` builds after the first cycle opens. Its pilot runs hidden in cycles 2 and 3.
 
 ## Non-goals for 2027
 
