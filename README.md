@@ -24,6 +24,12 @@ anywhere that serves static files; configured here for **Netlify** + **GitHub**.
 | `fund-experiments.html` | `/fund-experiments` | Donate (Donorbox) + crypto wallets |
 | `thanks.html` | `/thanks` | Post-submission confirmation |
 | `404.html` | — | Custom not-found |
+| generated | `/projects`, `/projects/<slug>` | Funded projects from the Airtable Grants table |
+| generated | `/donate` | Donorbox form, pool meter, open ledger |
+| `review.html` | `/review` | Panel review deck (not indexed) |
+| `review/community.html` | `/review/community` | Community review by former applicants (not indexed) |
+
+Generated pages are built by `scripts/render-pages.mjs` from `content/*.json`. See `docs/OPERATIONS.md`.
 
 ## Design system
 

@@ -5,10 +5,13 @@
   "scripts": {
     "build": "node scripts/build-static.mjs",
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check scripts/build-static.mjs && node --check scripts/cohort-showcase.js && node --check scripts/hero.js && node --check scripts/site-pages.js && node --check scripts/application.js",
+    "check": "node --check scripts/build-static.mjs && node --check scripts/cohort-showcase.js && node --check scripts/hero.js && node --check scripts/site-pages.js && node --check scripts/application.js && node --check scripts/review.mjs && node --check scripts/review-core.mjs && node --check scripts/community-core.mjs && node --check scripts/community-review.mjs && node --check scripts/site-data.mjs && node --check scripts/sync-airtable.mjs && node --check scripts/render-pages.mjs && node --check scripts/donorbox.mjs && node --check netlify/functions/review-api.mjs && node --check netlify/functions/donorbox-sync.mjs && node --check netlify/functions/donorbox-webhook.mjs && node --check scripts/crypto.mjs && node --check netlify/functions/crypto-import.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
   "devDependencies": {
     "playwright": "^1.63.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0"
   }
 }

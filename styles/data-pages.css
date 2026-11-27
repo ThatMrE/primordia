@@ -1,0 +1,87 @@
+/* /projects, /projects/<slug> and /donate. Same white surface, Karla body and
+   Jost headings as the handbook. Reading text 20px, no text under 15px. */
+:root { --line: #cad9d1; --wash: #e3eff0; --wash-2: #eef5f1; --ink-2: #3a4a45; --accent: #1f7a5a; }
+main { font-size: 20px; line-height: 1.55; }
+main h1 { font-family: 'Jost', sans-serif; font-weight: 700; font-size: clamp(44px, 5vw, 68px); line-height: 1; letter-spacing: -.035em; margin-bottom: 24px; text-wrap: balance; }
+main h2 { font-family: 'Jost', sans-serif; font-weight: 700; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.15; letter-spacing: -.03em; margin: 0 0 20px; }
+main h3 { font-size: 22px; line-height: 1.25; font-weight: 700; margin: 0 0 8px; }
+main p { max-width: 68ch; }
+.note, .empty-note { font-size: 17px; color: var(--ink-2); }
+.empty-note { border: 1px dashed var(--line); border-radius: 16px; padding: 20px 24px; max-width: none; }
+
+.data-hero { padding-block: 40px 40px; border-bottom: 1px solid var(--line); }
+.data-hero .lede { margin-bottom: 28px; }
+.stat-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; }
+.stat-row div { background: var(--wash-2); border-radius: 16px; padding: 18px 20px; }
+.stat-row dt { font-size: 16px; color: var(--ink-2); margin-bottom: 4px; }
+.stat-row dd { margin: 0; font-family: 'Jost', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+
+.grant-group { padding-block: 48px 8px; }
+.grant-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+.grant-card { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: #fff; transition: border-color 160ms ease, transform 160ms ease; }
+.grant-card:hover { border-color: #000; }
+.grant-card-link { display: flex; flex-direction: column; height: 100%; text-decoration: none; color: inherit; }
+.grant-card-link:focus-visible { outline: 3px solid #20545e; outline-offset: -3px; border-radius: 20px; }
+.grant-card-image { width: 100%; height: 220px; object-fit: cover; display: block; background: var(--wash); }
+.grant-card-image--blank { height: 120px; }
+.grant-card-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.grant-card-field { font-size: 16px; font-weight: 700; color: var(--accent); margin: 0 0 6px; }
+.grant-card-body h3 { font-family: 'Jost', sans-serif; font-size: 24px; letter-spacing: -.02em; text-wrap: balance; }
+.grant-card-meta { font-size: 16px; color: var(--ink-2); margin: 0 0 12px; }
+.grant-card-summary { font-size: 18px; line-height: 1.5; margin: 0 0 16px; }
+.grant-card-foot { margin: auto 0 0; display: flex; justify-content: space-between; gap: 12px; font-size: 16px; font-weight: 600; }
+.grant-status { background: var(--wash); border-radius: 999px; padding: 2px 12px; font-weight: 600; white-space: nowrap; }
+
+.data-cta { padding-block: 56px 72px; }
+
+.grant-page { padding-block: 24px 72px; }
+.crumb { font-size: 17px; margin: 0 0 20px; }
+.grant-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 48px; align-items: start; padding-bottom: 32px; }
+.grant-head h1 { font-size: clamp(36px, 4vw, 54px); }
+.grant-hero-image { width: 100%; height: auto; max-height: 420px; object-fit: cover; border-radius: 20px; display: block; }
+.fact-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; margin: 0 0 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.fact-list div { padding: 16px 16px 16px 0; }
+.fact-list dt { font-size: 16px; color: var(--ink-2); }
+.fact-list dd { margin: 2px 0 0; font-weight: 600; font-size: 18px; }
+.spend { margin-bottom: 32px; }
+.spend p { margin: 0 0 8px; }
+.spend-track { height: 14px; border-radius: 999px; background: var(--wash); overflow: hidden; max-width: 640px; }
+.spend-fill { height: 100%; background: var(--accent); border-radius: 999px; }
+.timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.timeline-item { position: relative; padding: 0 0 32px 28px; }
+.timeline-item::before { content: ""; position: absolute; left: -8px; top: 8px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+.timeline-month { font-size: 16px; font-weight: 700; color: var(--ink-2); margin: 0 0 4px; }
+.timeline-photo { max-width: min(100%, 560px); border-radius: 12px; margin: 8px 0 16px; display: block; }
+
+.pool { background: var(--wash-2); border-radius: 20px; padding: 22px 24px; max-width: 760px; }
+.pool-label { font-size: 16px; font-weight: 700; color: var(--ink-2); margin: 0 0 4px; }
+.pool-amount { margin: 0 0 12px; }
+.pool-amount strong { font-family: 'Jost', sans-serif; font-size: 34px; }
+.donate-main { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; padding-block: 48px; border-bottom: 1px solid var(--line); }
+.donorbox { width: 100%; max-width: 500px; min-height: 900px; border: 0; display: block; }
+.steps { margin: 0; padding-left: 26px; }
+.steps li { margin-bottom: 14px; padding-left: 6px; }
+.ledger, .back-grant, .crypto { padding-block: 48px; border-bottom: 1px solid var(--line); }
+.ledger h3 { margin-top: 32px; }
+.table-wrap { overflow-x: auto; max-width: 100%; }
+.ledger table { border-collapse: collapse; width: 100%; font-size: 18px; font-variant-numeric: tabular-nums; }
+.ledger th, .ledger td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.ledger thead th { font-size: 16px; color: var(--ink-2); font-weight: 600; }
+.back-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.back-list li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.back-list span { font-size: 17px; color: var(--ink-2); }
+.crypto .chain { padding: 16px 0; }
+
+@media (max-width: 899px) {
+ .stat-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .grant-head, .donate-main { grid-template-columns: 1fr; gap: 28px; }
+ .fact-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 599px) {
+ main { font-size: 18px; }
+ .data-hero { padding-block: 24px 32px; }
+ .stat-row dd { font-size: 28px; }
+ .grant-grid { grid-template-columns: 1fr; }
+ .grant-card-image { height: 180px; }
+ .donorbox { min-height: 960px; }
+}

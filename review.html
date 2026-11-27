@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="robots" content="noindex, nofollow"><title>Review deck — Primordia Grants</title><meta name="description" content="Grant review deck for the Primordia panel: one application at a time, ranked by AI, approved or declined with one gesture.">
+<link rel="icon" href="https://cdn.prod.website-files.com/698f998071bb1cd15550c6e1/699ec9b6c2b6cab7571a2c21_favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/site-pages.css"><link rel="stylesheet" href="/styles/site-footer.css"><link rel="stylesheet" href="/styles/review.css"></head><body class="review-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="site-wordmark" href="/" aria-label="Primordia home">PRIMORDIA</a><nav aria-label="Main navigation"><a href="/cohort-1">Cohort 01</a><a href="/grantees">Handbook</a><a class="nav-apply" href="/apply">Apply</a></nav></header>
+
+<main id="main" class="review">
+  <section class="review-top wrap" aria-labelledby="review-title">
+    <div class="review-heading">
+      <h1 id="review-title">Review deck</h1>
+      <p class="lede">One application at a time, ranked by AI. Approve, decline, or set aside with a swipe, a tap, or the arrow keys.</p>
+      <p class="review-alt"><a href="/review/community">Former applicant? Open your community reviews</a></p>
+    </div>
+    <div class="review-status" role="status" aria-live="polite">
+      <p class="review-progress" id="progress">Loading applications…</p>
+      <p class="review-mode" id="mode"></p>
+    </div>
+  </section>
+
+  <section class="review-gate wrap" id="gate" hidden aria-labelledby="gate-title">
+    <h2 id="gate-title">Reviewer key</h2>
+    <p>This deck reads live applications. Enter the reviewer key from the panel lead to continue. It stays in this browser tab only.</p>
+    <form id="gate-form" class="gate-form">
+      <label for="gate-key">Reviewer key</label>
+      <input id="gate-key" name="key" type="password" autocomplete="off" required>
+      <button class="btn btn--signal" type="submit">Open the deck</button>
+      <p class="field-error" id="gate-error" hidden></p>
+    </form>
+  </section>
+
+  <section class="review-toolbar wrap" id="toolbar" hidden>
+    <div class="view-tabs" role="tablist" aria-label="Review piles">
+      <button role="tab" class="view-tab" data-view="deck" aria-selected="true" id="tab-deck">Deck <span class="count" id="count-deck">0</span></button>
+      <button role="tab" class="view-tab" data-view="Approve" aria-selected="false" id="tab-approve">Approved <span class="count" id="count-Approve">0</span></button>
+      <button role="tab" class="view-tab" data-view="Later" aria-selected="false" id="tab-later">Later <span class="count" id="count-Later">0</span></button>
+      <button role="tab" class="view-tab" data-view="Reject" aria-selected="false" id="tab-reject">Declined <span class="count" id="count-Reject">0</span></button>
+    </div>
+    <div class="toolbar-actions">
+      <button class="btn" type="button" id="score-all">Score and rank with AI</button>
+      <button class="btn" type="button" id="undo" disabled>Undo</button>
+      <button class="btn" type="button" id="assign" hidden>Assign community reviewers</button>
+    </div>
+    <p class="scoring-note" id="scoring-note" hidden></p>
+  </section>
+
+  <section class="review-stage wrap" id="stage" hidden aria-label="Current application">
+    <div class="card-stack" id="stack"></div>
+    <div class="decision-bar" id="decision-bar">
+      <button class="decide decide--reject" type="button" data-decision="Reject" aria-keyshortcuts="ArrowLeft"><span class="decide-icon" aria-hidden="true">✕</span><span class="decide-label">Decline</span><kbd aria-hidden="true">←</kbd></button>
+      <button class="decide decide--later" type="button" data-decision="Later" aria-keyshortcuts="ArrowDown"><span class="decide-icon" aria-hidden="true">◷</span><span class="decide-label">Later</span><kbd aria-hidden="true">↓</kbd></button>
+      <button class="decide decide--approve" type="button" data-decision="Approve" aria-keyshortcuts="ArrowRight"><span class="decide-icon" aria-hidden="true">✓</span><span class="decide-label">Approve</span><kbd aria-hidden="true">→</kbd></button>
+    </div>
+  </section>
+
+  <section class="review-pile wrap" id="pile" hidden aria-label="Reviewed applications">
+    <ol class="pile-list" id="pile-list"></ol>
+    <p class="pile-empty" id="pile-empty" hidden>Nothing here yet.</p>
+  </section>
+
+  <p class="review-error wrap" id="error" role="alert" hidden></p>
+</main>
+
+<template id="card-template">
+  <article class="card" tabindex="0">
+    <div class="card-head">
+      <div class="score" data-slot="score">
+        <span class="score-number" data-slot="score-number">–</span>
+        <span class="score-verdict" data-slot="verdict">Not scored</span>
+      </div>
+      <p class="card-rank" data-slot="rank"></p>
+    </div>
+    <h2 class="card-title" data-slot="title"></h2>
+    <p class="card-meta" data-slot="meta"></p>
+    <p class="card-summary" data-slot="summary"></p>
+    <div class="card-points">
+      <div class="points points--plus" data-slot="strengths-wrap"><h3>Strengths</h3><ul data-slot="strengths"></ul></div>
+      <div class="points points--minus" data-slot="concerns-wrap"><h3>Concerns</h3><ul data-slot="concerns"></ul></div>
+    </div>
+    <div class="card-questions" data-slot="questions-wrap" hidden><h3>Ask the applicant</h3><ul data-slot="questions"></ul></div>
+    <details class="card-full">
+      <summary>Read the full application</summary>
+      <dl class="answers" data-slot="answers"></dl>
+    </details>
+    <details class="card-note">
+      <summary>Add a note for the panel</summary>
+      <label class="visually-hidden" data-slot="note-label">Note</label>
+      <textarea rows="3" data-slot="note" placeholder="Why this decision, or what to ask next."></textarea>
+    </details>
+    <div class="stamp stamp--approve" aria-hidden="true">Approve</div>
+    <div class="stamp stamp--reject" aria-hidden="true">Decline</div>
+    <div class="stamp stamp--later" aria-hidden="true">Later</div>
+  </article>
+</template>
+
+<footer class="section footer">
+  <div class="footer-wrapper"><div class="footer-flex">
+    <div class="footer-column" aria-hidden="true"></div>
+    <div class="footer-column _2nd">
+      <p class="footer-text">Primordia is a cross collaboration between <a href="https://valleydao.bio">ValleyDAO</a> &amp; <a href="https://biopunklab.com">Biopunk Labs</a></p>
+    </div>
+  </div></div>
+</footer>
+<script type="module" src="/scripts/review.mjs"></script>
+</body></html>
