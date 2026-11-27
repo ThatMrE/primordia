@@ -88,6 +88,8 @@ async function loadApplications() {
   state.apps = rankApplications(apps);
   nodes.toolbar.hidden = false;
   nodes.stage.hidden = false;
+  const assign = document.getElementById('assign');
+  if (assign) assign.hidden = !(state.status.mode === 'airtable' && state.status.community);
   render();
 }
 
@@ -146,7 +148,7 @@ function buildCard(app, position, total) {
   const slot = (name) => card.querySelector(`[data-slot="${name}"]`);
   card.dataset.id = app.id;
   slot('title').textContent = app.title;
-  slot('rank').textContent = `${position} of ${total} in the deck`;
+  slot('rank').textContent = `${position} of ${total} in the deck` + (app.community ? ` · Community ${app.community.score} from ${app.community.reviews} reviews` : '');
   const meta = [app.name, app.location, app.amount, app.lab].filter(Boolean);
   slot('meta').replaceChildren(...meta.map((m) => { const s = document.createElement('span'); s.textContent = m; return s; }));
   const score = slot('score');
@@ -303,6 +305,15 @@ function attachSwipe(card, app) {
 
 // ---------- scoring ----------
 nodes.scoreAll.addEventListener('click', scoreAll);
+const assignButton = document.getElementById('assign');
+assignButton?.addEventListener('click', async () => {
+  assignButton.disabled = true;
+  try {
+    const result = await api('assign', {});
+    nodes.scoringNote.hidden = false;
+    nodes.scoringNote.textContent = `Community reviews assigned for ${result.cycle}: ${result.created} new.` + (result.short.length ? ` ${result.short.length} applications have fewer than three reviewers.` : '');
+  } catch (error) { showError(error); } finally { assignButton.disabled = false; }
+});
 async function scoreAll() {
   if (state.scoring) return;
   const queue = unreviewed().filter((a) => !a.ai);

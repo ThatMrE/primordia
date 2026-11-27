@@ -1,0 +1,11 @@
+# Review routing. Replace the personal login with organization teams after the
+# move to the primordia-grants organization (docs/plan/01-github-org.md):
+#   @primordia-grants/maintainers, @primordia-grants/program, @primordia-grants/design
+*                       @ThatMrE
+/netlify/               @ThatMrE
+/scripts/donorbox.mjs   @ThatMrE
+/scripts/sync-airtable.mjs @ThatMrE
+/scripts/review-core.mjs   @ThatMrE
+/scripts/community-core.mjs @ThatMrE
+/content/               @ThatMrE
+/docs/plan/             @ThatMrE

@@ -1,6 +1,6 @@
 # 02. Selected grants on the website, straight from Airtable
 
-Status: draft for critique. Estimate: 3 days. Depends on 01 for the deploy hook secret.
+Status: built. The Primordia Grants base exists with Cohort 01 seeded. `/projects` and each grant page build from it. Waiting on the read token in Netlify.
 
 ## Outcome
 

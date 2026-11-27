@@ -1,6 +1,6 @@
 # 01. GitHub organization and delivery pipeline
 
-Status: draft for critique. Estimate: 2 days once Elliot creates the organization.
+Status: in progress. Done in the repository: CODEOWNERS, PR and issue templates, Dependabot, CONTRIBUTING. Waiting on Elliot: create the organization and name two more maintainers.
 
 ## Outcome
 

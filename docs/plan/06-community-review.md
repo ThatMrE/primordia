@@ -1,6 +1,6 @@
 # 06. Community review by former applicants
 
-Status: draft for critique. Estimate: 3 days to build, then a two-cycle pilot. Depends on 04 and the review deck (PR #12).
+Status: built. `/review/community`, assignment, and hidden scoring exist. Waiting on: reviewer keys and the first cycle.
 
 ## Outcome
 

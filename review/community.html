@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff"><meta name="robots" content="noindex, nofollow"><title>Community review — Primordia Grants</title><meta name="description" content="Former Primordia applicants score current applications with the panel's rubric.">
+<link rel="icon" href="https://cdn.prod.website-files.com/698f998071bb1cd15550c6e1/699ec9b6c2b6cab7571a2c21_favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/site-pages.css"><link rel="stylesheet" href="/styles/site-footer.css"><link rel="stylesheet" href="/styles/review.css"></head><body class="review-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><a class="site-wordmark" href="/" aria-label="Primordia home">PRIMORDIA</a><nav aria-label="Main navigation"><a href="/projects">Projects</a><a href="/donate">Donate</a><a class="nav-apply" href="/apply">Apply</a></nav></header>
+
+<main id="main" class="review">
+  <section class="review-top wrap" aria-labelledby="community-title">
+    <div class="review-heading">
+      <h1 id="community-title">Community review</h1>
+      <p class="lede">You applied to Primordia before. Now you help choose the next grants. Score each application on the panel's seven criteria. The panel sees your scores beside its own.</p>
+    </div>
+    <div class="review-status" role="status" aria-live="polite">
+      <p class="review-progress" id="c-progress">Enter your key to start</p>
+      <p class="review-mode" id="c-mode"></p>
+    </div>
+  </section>
+
+  <section class="review-gate wrap" id="c-gate" aria-labelledby="c-gate-title">
+    <h2 id="c-gate-title">Your review key</h2>
+    <p>Your invitation email has a personal key. It stays in this browser tab only. To try the page with sample applications, enter <strong>demo</strong>.</p>
+    <form id="c-gate-form" class="gate-form">
+      <label for="c-key">Review key</label>
+      <input id="c-key" name="key" type="password" autocomplete="off" required>
+      <button class="btn btn--signal" type="submit">Open my reviews</button>
+      <p class="field-error" id="c-gate-error" hidden></p>
+    </form>
+  </section>
+
+  <section class="wrap community-stage" id="c-stage" hidden aria-label="Application to review">
+    <article class="card community-card" id="c-card">
+      <p class="card-rank" id="c-position"></p>
+      <h2 class="card-title" id="c-title"></h2>
+      <p class="card-meta" id="c-amount"></p>
+      <details class="card-full" open>
+        <summary>The application</summary>
+        <dl class="answers" id="c-answers"></dl>
+      </details>
+      <form id="c-form" class="score-form" novalidate>
+        <fieldset class="criteria" id="c-criteria"></fieldset>
+        <div class="field">
+          <label for="c-strongest">The strongest point, in one sentence</label>
+          <textarea id="c-strongest" rows="2" maxlength="600" required></textarea>
+        </div>
+        <div class="field">
+          <label for="c-risk">The biggest risk, in one sentence</label>
+          <textarea id="c-risk" rows="2" maxlength="600" required></textarea>
+        </div>
+        <p class="field-error" id="c-error" role="alert" hidden></p>
+        <button class="btn btn--signal" type="submit" id="c-submit">Send review</button>
+      </form>
+    </article>
+  </section>
+
+  <section class="wrap deck-empty" id="c-done" hidden>
+    <h2>All reviews sent</h2>
+    <p>Thank you. The panel decides by the 7th of the month. Your scores stay private.</p>
+  </section>
+  <p class="review-error wrap" id="c-fail" role="alert" hidden></p>
+</main>
+<footer class="section footer">
+  <div class="footer-wrapper"><div class="footer-flex">
+    <div class="footer-column" aria-hidden="true"></div>
+    <div class="footer-column _2nd">
+      <p class="footer-text">Primordia is a cross collaboration between <a href="https://valleydao.bio">ValleyDAO</a> &amp; <a href="https://biopunklab.com">Biopunk Labs</a></p>
+    </div>
+  </div></div>
+</footer>
+<script type="module" src="/scripts/community-review.mjs"></script>
+</body></html>

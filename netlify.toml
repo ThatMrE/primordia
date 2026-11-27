@@ -53,6 +53,22 @@
   from = "/review"
   to = "/review.html"
   status = 200
+[[redirects]]
+  from = "/review/community"
+  to = "/review/community.html"
+  status = 200
+[[redirects]]
+  from = "/projects"
+  to = "/projects.html"
+  status = 200
+[[redirects]]
+  from = "/projects/*"
+  to = "/projects/:splat.html"
+  status = 200
+[[redirects]]
+  from = "/donate"
+  to = "/donate.html"
+  status = 200
 
 # ---- Custom 404 (keep last) ----
 [[redirects]]
@@ -63,6 +79,11 @@
 # ---- Review deck: never cache or index ----
 [[headers]]
   for = "/review.html"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/review/*"
   [headers.values]
     Cache-Control = "no-store"
     X-Robots-Tag = "noindex, nofollow"

@@ -51,3 +51,11 @@ npm run build && npm test && npm run smoke
 ```
 
 The smoke test opens `/review` at phone and desktop widths, checks that three cards stack, that no text is smaller than 14px, and that the right arrow key approves the top card.
+
+## Community review
+
+Former applicants score assigned applications at `/review/community`. They see no name, email, location, lab or AI score. They give seven scores from 1 to 5 and two sentences. They cannot approve or decline.
+
+The panel lead presses "Assign community reviewers" in the deck when a cycle opens. Each application gets three reviewers. Conflicts by email, institution domain, city and declared names are excluded. A reviewer who applied in the same cycle reviews nothing.
+
+During the pilot the panel does not see community scores. Set `COMMUNITY_SCORES_VISIBLE=true` after the go decision to show "Community 72 from 4 reviews" on each card. Setup is in `docs/OPERATIONS.md`.

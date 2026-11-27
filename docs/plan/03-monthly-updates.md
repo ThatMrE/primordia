@@ -1,6 +1,6 @@
 # 03. Monthly grantee updates through one Airtable form
 
-Status: draft for critique. Estimate: 2 days. Depends on 02.
+Status: built. The Updates table, the update form (unpublished) and the timeline on each grant page exist. Waiting on: publish the form, build the two email automations in Airtable.
 
 ## Outcome
 

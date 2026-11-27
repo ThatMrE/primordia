@@ -1,6 +1,6 @@
 # 05. Transparency by construction
 
-Status: draft for critique. Estimate: 5 days (3 for the pages, 2 for Donorbox). Depends on 02.
+Status: built. `/donate` shows the open ledger. The Donorbox hourly pull and webhook exist. Waiting on: Donorbox API add-on, keys in Netlify. Crypto import not built.
 
 ## Outcome
 
