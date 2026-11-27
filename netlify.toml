@@ -5,6 +5,13 @@
   publish = "static-dist"
   command = "npm run build && npm test && npm run check"
 
+# Review deck API (grant review cards). Secrets live in Netlify environment
+# variables; see docs/REVIEW-DECK.md.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["content/review-demo.json"]
+
 # ---- Pretty URLs: /apply instead of /apply.html ----
 [[redirects]]
   from = "/about"
@@ -42,12 +49,23 @@
   from = "/thanks"
   to = "/thanks.html"
   status = 200
+[[redirects]]
+  from = "/review"
+  to = "/review.html"
+  status = 200
 
 # ---- Custom 404 (keep last) ----
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
+
+# ---- Review deck: never cache or index ----
+[[headers]]
+  for = "/review.html"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow"
 
 # ---- Security headers ----
 [[headers]]

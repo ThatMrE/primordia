@@ -4,7 +4,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { resolve, extname } from 'node:path';
 import assert from 'node:assert/strict';
 const root = resolve('static-dist');
-const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
+const types = {'.html':'text/html','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml'};
 const server = createServer(async(req,res)=>{
  try {
   const name = decodeURIComponent(new URL(req.url,'http://localhost').pathname);
@@ -49,6 +49,21 @@ try {
  assert.match(await page.getByRole('heading',{level:1}).innerText(),/Applications opening at the end of September 2026/);
  assert.equal(await page.getByRole('link',{name:/Read the grantee handbook/}).getAttribute('href'),'/grantees');
  console.log('Application opening notice is visible; no form or submission controls are exposed.');
+ for (const width of [375, 1440]) {
+  await page.setViewportSize({width,height:1000});
+  await page.goto(base+'/review');
+  await page.locator('.card').first().waitFor();
+  assert.equal(await page.locator('.card-stack .card').count(), 3, 'review deck shows a stack of three cards');
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'review deck overflow');
+  const small = await page.evaluate(()=>[...document.querySelectorAll('main *')].filter(e=>e.childNodes.length&&[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&e.offsetParent!==null&&parseFloat(getComputedStyle(e).fontSize)<14).map(e=>e.tagName+':'+e.textContent.trim().slice(0,30)));
+  assert.deepEqual(small, [], 'review deck text stays at or above 14px');
+  await page.keyboard.press('ArrowRight');
+  await page.locator('#progress').filter({hasText:'1 of 10 reviewed'}).waitFor();
+  await page.getByRole('tab',{name:/Approved/}).click();
+  assert.equal(await page.locator('.pile-item').count(), 1, 'approve by keyboard lands in the approved pile');
+  await page.evaluate(()=>localStorage.clear());
+ }
+ console.log('Review deck renders, swipes by keyboard and keeps text readable.');
  assert.deepEqual(errors,[]);
  console.log('Routes and browser runtime passed. No production form was submitted.');
 }finally{await browser.close();server.close();}

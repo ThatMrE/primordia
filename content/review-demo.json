@@ -1,0 +1,185 @@
+{
+  "note": "Sample applications for the review deck. Every person, project and lab here is fictional. Replace by configuring Airtable; see docs/REVIEW-DECK.md.",
+  "records": [
+    {
+      "id": "demo01",
+      "createdTime": "2026-10-02T09:12:00.000Z",
+      "fields": {
+        "name": "Amara Oyelaran",
+        "email": "amara@example.org",
+        "project-summary": "Smallholder cassava farmers around Ibadan lose a third of each harvest to cassava brown streak virus before symptoms appear. Commercial PCR screening is too slow and too expensive for a cooperative. We want to test whether a one-pot RT-LAMP assay with a colour readout can detect the virus in leaf punches at the cooperative's shared lab, with sensitivity within a factor of ten of lab PCR. If it works, a $4 test replaces a two-week wait.",
+        "experimental-plan": "Design two primer sets against the conserved CBSV coat-protein region. Run RT-LAMP on 60 field leaf samples already collected and stored at -20C, alongside RT-PCR on the same extracts at the university plant pathology lab. Compare limit of detection on a dilution series of a synthetic positive control. Score the colour readout blind with three cooperative technicians.",
+        "success-criteria": "At least 85 percent agreement with RT-PCR on the 60 samples and a limit of detection within 10x of PCR. If it works, the next experiment is a field trial on fresh leaves without the freezing step.",
+        "prior-work": "RT-LAMP has detected CBSV in East African cassava (Tomlinson et al. 2013). Our cooperative has a Bento Lab and a heat block.",
+        "timeline-milestones": "Month 1 primer design and synthesis. Month 2 optimisation on controls. Month 3 blind field-sample comparison. Month 4 write-up and public protocol.",
+        "budget-total": "$2,650",
+        "budget-breakdown": "Primers and master mix $1,100. Synthetic control $300. PCR comparison at the university core $700. Consumables $350. Printing of the open protocol for cooperatives $200.",
+        "lab-access": "Ibadan Open Bio community lab (bench and Bento Lab) plus access to the University of Ibadan plant pathology core for PCR",
+        "community-impact": "A protocol and primer set released on protocols.io under CC-BY so other cooperatives can run it. Three cooperative technicians trained.",
+        "applicant-bio": "Plant pathology MSc, four years as an extension officer, co-founder of Ibadan Open Bio."
+      }
+    },
+    {
+      "id": "demo02",
+      "createdTime": "2026-10-03T14:40:00.000Z",
+      "fields": {
+        "name": "Tomás Ferreira",
+        "email": "tomas@example.org",
+        "project-summary": "I want to find out whether a cheap open-source spectrophotometer built from a 3D-printed body and a webcam can replace a $3,000 instrument for routine OD600 readings in community labs. Most community labs skip growth curves because they cannot afford the instrument, which makes their microbiology sloppy.",
+        "experimental-plan": "Build three copies of the device from the published design. Measure the same E. coli culture series on the DIY device and on a borrowed NanoDrop at the university. Repeat across three days and three operators.",
+        "success-criteria": "Readings within 10 percent of the reference instrument across the 0.1 to 1.0 OD range, and under 5 percent variation between operators. Next step is a kit for other labs.",
+        "prior-work": "Design from the GaudiLabs open hardware repository.",
+        "timeline-milestones": "Weeks 1 to 4 build. Weeks 5 to 10 comparison runs. Weeks 11 to 14 documentation.",
+        "budget-total": "$1,400",
+        "budget-breakdown": "Printing and electronics for three devices $700. E. coli strains and media $300. Cuvettes and consumables $250. Documentation $150.",
+        "lab-access": "Lisbon BioHack community lab",
+        "community-impact": "Build guide and calibration data published openly. A workshop at the lab to build six more devices.",
+        "applicant-bio": "Electrical engineering graduate, volunteer at Lisbon BioHack for two years, has built two open hardware instruments."
+      }
+    },
+    {
+      "id": "demo03",
+      "createdTime": "2026-10-04T08:05:00.000Z",
+      "fields": {
+        "name": "Priya Raghunathan",
+        "email": "priya@example.org",
+        "project-summary": "Chronic wounds in people with diabetes heal slowly because macrophages stay stuck in an inflammatory state. We want to test whether a short exposure to a small-molecule TGF-beta pathway agonist shifts cultured THP-1 derived macrophages toward a pro-repair state, measured by CD206 and IL-10 expression.",
+        "experimental-plan": "Differentiate THP-1 cells to macrophages with PMA, polarise with LPS, then treat with the agonist at three doses for 24 hours. Read CD206 by flow cytometry at the shared core and IL-10 by ELISA. Three biological replicates.",
+        "success-criteria": "A dose-dependent increase in CD206-positive cells of at least 1.5x over vehicle. If so, repeat in primary monocyte-derived macrophages.",
+        "prior-work": "Published work on macrophage polarisation in diabetic wounds; two preprints on the agonist in other cell types.",
+        "timeline-milestones": "Month 1 cell culture set-up. Months 2 and 3 treatment and readouts. Month 4 analysis and preprint.",
+        "budget-total": "$3,000",
+        "budget-breakdown": "Cell line and media $900. Agonist and controls $600. Antibodies $700. ELISA kit $500. Core facility time $300.",
+        "lab-access": "Bangalore Community Biolab tissue culture room plus flow cytometry at a partner institute core",
+        "community-impact": "All data and the protocol posted publicly. Results will inform a larger study with a local wound clinic.",
+        "applicant-bio": "Final-year biotechnology undergraduate with two summers of cell culture experience in an immunology lab."
+      }
+    },
+    {
+      "id": "demo04",
+      "createdTime": "2026-10-05T19:22:00.000Z",
+      "fields": {
+        "name": "Marcus Lindqvist",
+        "email": "marcus@example.org",
+        "project-summary": "A complete platform for engineering yeast to produce any flavour compound on demand, with an AI model that designs the pathways and a robotic system that builds the strains. This will transform the food industry and I am seeking seed funding for the first phase.",
+        "experimental-plan": "Phase one is building the AI model and ordering the robot. Phase two is strain construction for twenty compounds. Phase three is scale-up in a bioreactor.",
+        "success-criteria": "Twenty working strains and a licensing deal.",
+        "prior-work": "I have read widely on metabolic engineering.",
+        "timeline-milestones": "Eighteen months total. The grant covers month one.",
+        "budget-total": "$45,000",
+        "budget-breakdown": "Robot deposit $30,000. Compute $10,000. Reagents $5,000.",
+        "lab-access": "My garage for now, a lab once funded",
+        "community-impact": "The platform will be available to licensees.",
+        "applicant-bio": "Entrepreneur with a background in marketing."
+      }
+    },
+    {
+      "id": "demo05",
+      "createdTime": "2026-10-06T11:00:00.000Z",
+      "fields": {
+        "name": "Dr. Helen Adebayo-Reyes",
+        "email": "helen@example.org",
+        "project-summary": "Many community labs want to work with mycelium materials but cannot tell which local agricultural waste will give a strong panel. We want to screen six regional waste streams (coffee husk, corn stover, rice straw, sawdust, brewer's grain, sugarcane bagasse) as substrates for Ganoderma lucidum and measure compressive strength of the resulting panels.",
+        "experimental-plan": "Grow G. lucidum on each sterilised substrate in identical moulds, five replicates each, for three weeks. Dry and test compressive strength with the lab's small universal testing machine. Record colonisation time and contamination rate.",
+        "success-criteria": "A ranked table of substrates with strength and contamination data. If one substrate reaches 0.5 MPa, the next step is a full-size panel.",
+        "prior-work": "Mycelium composite literature from Ecovative and several academic groups; our lab has grown G. lucidum before.",
+        "timeline-milestones": "Month 1 substrate prep and inoculation. Months 2 and 3 growth and testing. Month 4 publication.",
+        "budget-total": "$2,200",
+        "budget-breakdown": "Substrates and sterilisation $500. Spawn and culture supplies $600. Moulds $400. Testing machine calibration $300. Open dataset and photos $400.",
+        "lab-access": "Mexico City Biofab community lab, which has a laminar flow hood and testing machine",
+        "community-impact": "An open dataset and growing guide in Spanish and English. Two public build days.",
+        "applicant-bio": "Materials scientist with a PhD, now running a design studio, volunteer lead for materials at Biofab."
+      }
+    },
+    {
+      "id": "demo06",
+      "createdTime": "2026-10-07T07:30:00.000Z",
+      "fields": {
+        "name": "Jun Watanabe",
+        "email": "jun@example.org",
+        "project-summary": "Test whether a cell-free expression system freeze-dried onto paper can report arsenic in well water at the WHO limit of 10 ppb within an hour, using a known arsenic-responsive promoter driving a colour enzyme.",
+        "experimental-plan": "Prepare cell-free extract, add the arsR-regulated reporter plasmid, freeze-dry onto filter paper discs. Rehydrate with spiked water at 0, 5, 10, 50 and 200 ppb arsenic and time the colour change. Twenty replicates per concentration.",
+        "success-criteria": "Reliable colour change at 10 ppb within 60 minutes and no change at 0 ppb in at least 18 of 20 replicates. Next step is testing real well samples with a local NGO.",
+        "prior-work": "Paper-based cell-free sensors from the Pardee and Collins labs; arsenic biosensors from the iGEM community.",
+        "timeline-milestones": "Month 1 extract preparation. Month 2 plasmid and freeze-drying. Month 3 spiked water trials. Month 4 report.",
+        "budget-total": "$2,950",
+        "budget-breakdown": "Cell-free extract components $1,200. Plasmid synthesis $500. Freeze-dryer time at the community lab $400. Arsenic standards and disposal $450. Consumables $400.",
+        "lab-access": "Tokyo Garage Bio community lab, which has a freeze-dryer and chemical disposal contract",
+        "community-impact": "A low-cost sensor design shared openly, aimed at the roughly 140 million people who drink arsenic-contaminated groundwater.",
+        "applicant-bio": "Former iGEM team captain, now a chemistry teacher, member of Tokyo Garage Bio for three years."
+      }
+    },
+    {
+      "id": "demo07",
+      "createdTime": "2026-10-08T16:45:00.000Z",
+      "fields": {
+        "name": "Sofia Marchetti",
+        "email": "sofia@example.org",
+        "project-summary": "Looking into whether some soil bacteria can break down plastic. Would be good for the environment.",
+        "experimental-plan": "Collect soil, put plastic in it, see what happens.",
+        "success-criteria": "Plastic gets eaten.",
+        "prior-work": "",
+        "timeline-milestones": "A few months.",
+        "budget-total": "$3,000",
+        "budget-breakdown": "Supplies.",
+        "lab-access": "Not yet",
+        "community-impact": "Less plastic.",
+        "applicant-bio": "Student."
+      }
+    },
+    {
+      "id": "demo08",
+      "createdTime": "2026-10-09T10:15:00.000Z",
+      "fields": {
+        "name": "Daniel Okafor and Lena Hartmann",
+        "email": "team@example.org",
+        "project-summary": "Open-source insulin efforts still depend on a proprietary purification step. We want to test whether a published mixed-mode chromatography resin recovers at least 70 percent of a proinsulin analog from a clarified yeast supernatant, as the first open purification step.",
+        "experimental-plan": "Express the proinsulin analog in Pichia pastoris at the community lab (we already have the strain). Clarify the supernatant and run it over a 1 mL mixed-mode column on the lab's manual FPLC. Quantify recovery by SDS-PAGE densitometry and a commercial insulin ELISA. Three runs.",
+        "success-criteria": "At least 70 percent recovery and at least 80 percent purity by densitometry. If so, next is the refolding step.",
+        "prior-work": "Open Insulin Project publications and our own expression data from last year.",
+        "timeline-milestones": "Month 1 expression. Month 2 purification runs. Month 3 analytics. Month 4 open write-up.",
+        "budget-total": "$2,980",
+        "budget-breakdown": "Resin and column $900. Media and induction reagents $600. ELISA kit $650. Gels and stains $330. Shared FPLC maintenance contribution $500.",
+        "lab-access": "Berlin Community Biolab, BSL-1, with a manual FPLC",
+        "community-impact": "All protocols and data released under an open licence to the Open Insulin network.",
+        "applicant-bio": "Daniel is a biochemist with protein purification experience in industry. Lena is a biotechnology master's student and lab manager at the community lab."
+      }
+    },
+    {
+      "id": "demo09",
+      "createdTime": "2026-10-10T13:00:00.000Z",
+      "fields": {
+        "name": "Rafael Souza",
+        "email": "rafael@example.org",
+        "project-summary": "Test whether the native bacteria living on açaí fruit in the Amazon can ferment açaí pulp into a stable, safe, probiotic drink, measured by pH drop, pathogen absence and lactic acid bacteria count.",
+        "experimental-plan": "Isolate lactic acid bacteria from fresh açaí at the Belém community lab, identify by 16S sequencing (outsourced), ferment pasteurised pulp with the three best isolates, track pH, LAB counts and absence of E. coli and Salmonella over 14 days.",
+        "success-criteria": "pH below 4.2 within 48 hours, LAB above 10^7 CFU per mL at day 7, no pathogens. Next step is a shelf-life study.",
+        "prior-work": "Fruit-derived LAB fermentations in the literature; our lab's food safety training.",
+        "timeline-milestones": "Month 1 isolation. Month 2 sequencing. Months 3 and 4 fermentation trials and report.",
+        "budget-total": "$2,400",
+        "budget-breakdown": "Media and plates $700. 16S sequencing of 24 isolates $600. Pathogen test kits $600. Pulp and containers $300. Open report $200.",
+        "lab-access": "Belém community food science lab",
+        "community-impact": "Open fermentation protocol for riverside producer cooperatives who currently sell only fresh pulp.",
+        "applicant-bio": "Food engineer, two years in a dairy fermentation plant, now coordinating the community lab."
+      }
+    },
+    {
+      "id": "demo10",
+      "createdTime": "2026-10-11T09:50:00.000Z",
+      "fields": {
+        "name": "Ingrid Solberg",
+        "email": "ingrid@example.org",
+        "project-summary": "Many bee keepers in northern Europe lose colonies to Nosema, a gut fungus, and cannot afford microscopy diagnosis. We want to test whether a low-cost loop-mediated isothermal amplification kit run at a community lab detects Nosema ceranae spores in bee gut samples as reliably as the national lab's microscopy.",
+        "experimental-plan": "Collect gut samples from 40 hives through the regional beekeeping association. Run LAMP at the community lab and microscopy counts at the national bee lab. Compare agreement.",
+        "success-criteria": "90 percent agreement with microscopy. If it works, train five beekeepers to run the test.",
+        "prior-work": "LAMP assays for Nosema exist in the literature; the association has pledged samples.",
+        "timeline-milestones": "Month 1 sample collection. Months 2 and 3 testing. Month 4 report and training day.",
+        "budget-total": "$1,900",
+        "budget-breakdown": "LAMP reagents $900. Sample collection kits $300. Microscopy comparison fees $400. Training day $300.",
+        "lab-access": "Oslo Bio Commons community lab",
+        "community-impact": "Open protocol and a training video for beekeeping associations.",
+        "applicant-bio": "Veterinary nurse and hobby beekeeper, member of Oslo Bio Commons."
+      }
+    }
+  ]
+}
