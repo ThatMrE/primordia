@@ -70,6 +70,16 @@
   to = "/donate.html"
   status = 200
 
+# ---- Volunteer invitation ----
+[[redirects]]
+  from = "/volunteers"
+  to = "/volunteers.html"
+  status = 200
+[[redirects]]
+  from = "/volunteer"
+  to = "/volunteers"
+  status = 301
+
 # ---- Custom 404 (keep last) ----
 [[redirects]]
   from = "/*"
